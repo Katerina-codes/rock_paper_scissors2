@@ -14,4 +14,10 @@ public class RulesTest {
       assertEquals("draw", rules.scoreGame("rock", "rock"));
    }
 
+    @Test
+    public void scoresAWinForRockAgainstScissors() {
+        Rules rules = new Rules();
+
+        assertEquals("rock wins", rules.scoreGame("rock", "scissors"));
+    }
 }
