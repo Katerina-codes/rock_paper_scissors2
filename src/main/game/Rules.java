@@ -6,8 +6,10 @@ public class Rules {
             return "draw";
         } else if (playerTwoMove.equals("scissors")) {
             return "rock wins";
-        } else {
+        } else if (playerOneMove.equals("rock") && (playerTwoMove.equals("paper"))) {
             return "paper wins";
+        } else {
+            return "scissors wins";
         }
     }
 }

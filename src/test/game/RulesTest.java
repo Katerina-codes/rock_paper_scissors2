@@ -27,4 +27,11 @@ public class RulesTest {
 
         assertEquals("paper wins", rules.scoreGame("rock", "paper"));
     }
+
+    @Test
+    public void scoresLossForPaperAgainstScissors() {
+        Rules rules = new Rules();
+
+        assertEquals("scissors wins", rules.scoreGame("scissors", "paper"));
+    }
 }
