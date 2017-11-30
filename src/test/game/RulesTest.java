@@ -35,5 +35,6 @@ public class RulesTest {
         Rules rules = new Rules();
 
         assertEquals("scissors wins", rules.scoreGame("scissors", "paper"));
+        assertEquals("scissors wins", rules.scoreGame("paper", "scissors"));
     }
 }
