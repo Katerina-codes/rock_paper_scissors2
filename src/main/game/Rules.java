@@ -6,10 +6,12 @@ public class Rules {
             return "draw";
         } else if (playerOneMove.equals("rock")) {
             return findScoreForRock(playerTwoMove);
-        } else if (playerOneMove.equals("scissors") && (playerTwoMove.equals("rock"))) {
-            return "rock wins";
+        } else if (playerOneMove.equals("paper")) {
+            return findScoreForPaper(playerTwoMove);
         } else if (playerOneMove.equals("rock") && (playerTwoMove.equals("paper"))) {
             return "paper wins";
+        } else if (playerOneMove.equals("scissors") && (playerTwoMove.equals("rock"))) {
+            return "rock wins";
         } else {
             return "scissors wins";
         }
@@ -22,4 +24,13 @@ public class Rules {
             return "paper wins";
         }
     }
+
+    public String findScoreForPaper(String playerTwoMove) {
+        if (playerTwoMove.equals("rock")) {
+            return "paper wins";
+        } else {
+            return "scissors wins";
+        }
+    }
+
 }

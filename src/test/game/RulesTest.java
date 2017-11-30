@@ -27,6 +27,7 @@ public class RulesTest {
         Rules rules = new Rules();
 
         assertEquals("paper wins", rules.scoreGame("rock", "paper"));
+        assertEquals("paper wins", rules.scoreGame("paper", "rock"));
     }
 
     @Test
