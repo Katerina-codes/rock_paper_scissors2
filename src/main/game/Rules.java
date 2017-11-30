@@ -1,10 +1,10 @@
 package main.game;
 
 public class Rules {
-    public String scoreGame(String playerOneMove, String playerMoveTwo) {
-        if (playerOneMove.equals(playerMoveTwo)) {
+    public String scoreGame(String playerOneMove, String playerTwoMove) {
+        if (playerOneMove.equals(playerTwoMove)) {
             return "draw";
-        } else if (playerMoveTwo.equals("scissors")) {
+        } else if (playerTwoMove.equals("scissors")) {
             return "rock wins";
         } else {
             return "paper wins";
