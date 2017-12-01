@@ -39,22 +39,22 @@ public class RulesTest {
         Rules rules = new Rules(moves);
 
         assertEquals(ROCK.getMove(), rules.scoreGameTwo(ROCK, SCISSORS));
-        assertEquals(ROCK.getMove(), rules.scoreGame(SCISSORS, ROCK));
+        assertEquals(ROCK.getMove(), rules.scoreGameTwo(SCISSORS, ROCK));
     }
 
     @Test
     public void scoresLossForRockAgainstPaper() {
-        Rules rules = new Rules();
+        Rules rules = new Rules(moves);
 
-        assertEquals(PAPER.getMove(), rules.scoreGame(ROCK, PAPER));
-        assertEquals(PAPER.getMove(), rules.scoreGame(PAPER, ROCK));
+        assertEquals(PAPER.getMove(), rules.scoreGameTwo(ROCK, PAPER));
+        assertEquals(PAPER.getMove(), rules.scoreGameTwo(PAPER, ROCK));
     }
 
     @Test
     public void scoresLossForPaperAgainstScissors() {
-        Rules rules = new Rules();
+        Rules rules = new Rules(moves);
 
-        assertEquals(SCISSORS.getMove(), rules.scoreGame(SCISSORS, PAPER));
-        assertEquals(SCISSORS.getMove(), rules.scoreGame(PAPER, SCISSORS));
+        assertEquals(SCISSORS.getMove(), rules.scoreGameTwo(SCISSORS, PAPER));
+        assertEquals(SCISSORS.getMove(), rules.scoreGameTwo(PAPER, SCISSORS));
     }
 }
