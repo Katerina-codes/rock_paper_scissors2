@@ -1,9 +1,11 @@
 package test.game;
 
 import main.game.*;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static main.game.Moves.*;
 import static main.game.Result.DRAW;
@@ -11,8 +13,10 @@ import static org.junit.Assert.assertEquals;
 
 public class RulesTest {
 
-    @Test
-    public void scoresADraw() {
+    private Map moves;
+
+    @Before
+    public void setUp() {
         HashMap<Moves, Move> moves = new HashMap<>();
         Move rockMove = new Rock();
         Move paperMove = new Paper();
@@ -20,6 +24,10 @@ public class RulesTest {
         moves.put(ROCK, rockMove);
         moves.put(PAPER, paperMove);
         moves.put(SCISSORS, scissorsMove);
+    }
+    
+    @Test
+    public void scoresADraw() {
 
         Rules rules = new Rules(moves);
 
