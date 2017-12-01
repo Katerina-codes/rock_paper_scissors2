@@ -1,7 +1,9 @@
 package test.game;
 
-import main.game.Rules;
+import main.game.*;
 import org.junit.Test;
+
+import java.util.HashMap;
 
 import static main.game.Moves.*;
 import static main.game.Result.DRAW;
@@ -11,9 +13,17 @@ public class RulesTest {
 
     @Test
     public void scoresADraw() {
-        Rules rules = new Rules();
+        HashMap<Moves, Move> moves = new HashMap<>();
+        Move rockMove = new Rock();
+        Move paperMove = new Paper();
+        Move scissorsMove = new Scissors();
+        moves.put(ROCK, rockMove);
+        moves.put(PAPER, paperMove);
+        moves.put(SCISSORS, scissorsMove);
 
-        assertEquals(DRAW.getResult(), rules.scoreGame(ROCK, ROCK));
+        Rules rules = new Rules(moves);
+
+        assertEquals(DRAW.getResult(), rules.scoreGameTwo(ROCK, ROCK));
     }
 
     @Test
