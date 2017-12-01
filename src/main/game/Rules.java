@@ -10,8 +10,6 @@ public class Rules {
             return findScoreForRock(playerTwoMove);
         } else if (playerOneMove.equals(PAPER)) {
             return findScoreForPaper(playerTwoMove);
-        } else if (playerOneMove.equals(ROCK) && (playerTwoMove.equals(PAPER))) {
-            return "paper wins";
         } else  {
             return findScoreForScissors(playerTwoMove);
         }
