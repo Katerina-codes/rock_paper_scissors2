@@ -17,7 +17,7 @@ public class RulesTest {
 
     @Before
     public void setUp() {
-        HashMap<Moves, Move> moves = new HashMap<>();
+        moves = new HashMap<>();
         Move rockMove = new Rock();
         Move paperMove = new Paper();
         Move scissorsMove = new Scissors();
@@ -36,9 +36,9 @@ public class RulesTest {
 
     @Test
     public void scoresAWinForRockAgainstScissors() {
-        Rules rules = new Rules();
+        Rules rules = new Rules(moves);
 
-        assertEquals(ROCK.getMove(), rules.scoreGame(ROCK, SCISSORS));
+        assertEquals(ROCK.getMove(), rules.scoreGameTwo(ROCK, SCISSORS));
         assertEquals(ROCK.getMove(), rules.scoreGame(SCISSORS, ROCK));
     }
 
