@@ -1,41 +1,42 @@
 package main.game;
 
 import static main.game.Moves.*;
+import static main.game.Result.DRAW;
 
 public class Rules {
     public String scoreGame(Moves playerOneMove, Moves playerTwoMove) {
         if (playerOneMove.equals(playerTwoMove)) {
-            return "draw";
+            return DRAW.getResult();
         } else if (playerOneMove.equals(ROCK)) {
-            return findScoreForRock(playerTwoMove);
+            return findScoreForRock(playerTwoMove).getMove();
         } else if (playerOneMove.equals(PAPER)) {
-            return findScoreForPaper(playerTwoMove);
+            return findScoreForPaper(playerTwoMove).getMove();
         } else  {
-            return findScoreForScissors(playerTwoMove);
+            return findScoreForScissors(playerTwoMove).getMove();
         }
     }
 
-    public String findScoreForRock(Moves playerTwoMove) {
+    public Moves findScoreForRock(Moves playerTwoMove) {
         if (playerTwoMove.equals(SCISSORS)) {
-            return "rock wins";
+            return ROCK;
         } else {
-            return "paper wins";
+            return PAPER;
         }
     }
 
-    public String findScoreForPaper(Moves playerTwoMove) {
+    public Moves findScoreForPaper(Moves playerTwoMove) {
         if (playerTwoMove.equals(ROCK)) {
-            return "paper wins";
+            return PAPER;
         } else {
-            return "scissors wins";
+            return SCISSORS;
         }
     }
 
-    public String findScoreForScissors(Moves playerTwoMove) {
+    public Moves findScoreForScissors(Moves playerTwoMove) {
         if (playerTwoMove.equals(PAPER)) {
-            return "scissors wins";
+            return SCISSORS;
         } else {
-            return "rock wins";
+            return ROCK;
         }
     }
 }

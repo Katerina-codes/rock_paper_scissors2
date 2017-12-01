@@ -10,4 +10,8 @@ public enum Moves {
     Moves(String move) {
         this.move = move;
     }
+
+    public String getMove() {
+        return move;
+    }
 }
