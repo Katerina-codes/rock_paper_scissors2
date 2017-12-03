@@ -27,4 +27,13 @@ public class CommandlineUiTest {
 
         assertEquals("rock", ui.getsMove());
     }
+
+    @Test
+    public void announcesWinner() {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        InputStream input = new ByteArrayInputStream("".getBytes());
+        CommandlineUi ui = new CommandlineUi(new PrintStream(output), input);
+
+        assertEquals("rock wins!", ui.announceWinner("rock"));
+    }
 }
