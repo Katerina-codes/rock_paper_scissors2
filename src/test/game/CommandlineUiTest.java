@@ -14,7 +14,9 @@ public class CommandlineUiTest {
 
     @Test
     public void asksUserToEnterMove() {
-        CommandlineUi ui = new CommandlineUi();
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        InputStream input = new ByteArrayInputStream("".getBytes());
+        CommandlineUi ui = new CommandlineUi(new PrintStream(output), input);
 
         assertEquals("Pick a move. Enter 'rock', 'paper' or 'scissors': ", ui.askForMove());
     }

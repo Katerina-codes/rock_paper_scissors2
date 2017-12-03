@@ -7,10 +7,6 @@ public class CommandlineUi {
     private PrintStream output;
     private BufferedReader input;
 
-    public CommandlineUi() {
-
-    }
-
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
