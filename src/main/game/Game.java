@@ -14,6 +14,7 @@ public class Game {
         inputOutput.askForMove();
         String playerOneMove = inputOutput.getsMove();
         Moves convertedPlayerOneMove = inputOutput.convertMove(playerOneMove);
+        inputOutput.askForMove();
         String playerTwoMove = inputOutput.getsMove();
         Moves convertedPlayerTwoMove = inputOutput.convertMove(playerTwoMove);
         String winningMove = rules.scoreGame(convertedPlayerOneMove, convertedPlayerTwoMove);
