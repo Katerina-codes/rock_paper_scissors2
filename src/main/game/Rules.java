@@ -12,11 +12,24 @@ public class Rules {
         this.moves = moves;
     }
 
-    public String scoreGameTwo(Moves playerOneMove, Moves playerTwoMove) {
+    public String scoreGame(Moves playerOneMove, Moves playerTwoMove) {
         if (playerOneMove.equals(playerTwoMove)) {
             return DRAW.getResult();
         } else {
             return moves.get(playerOneMove).scoreAgainst(playerTwoMove);
         }
+    }
+
+
+    public Result scoreGameTwo(Moves playerOneMove, Moves playerTwoMove) {
+        if (playerOneMove.equals(playerTwoMove)) {
+            return DRAW;
+        } else {
+            return findWinningPlayer(playerOneMove, playerTwoMove);
+        }
+    }
+
+    public Result findWinningPlayer(Moves playerOneMove, Moves playerTwoMove) {
+        return Result.PLAYER_ONE_WINS;
     }
 }

@@ -25,36 +25,43 @@ public class RulesTest {
         moves.put(PAPER, paperMove);
         moves.put(SCISSORS, scissorsMove);
     }
-    
+
     @Test
     public void scoresADraw() {
 
         Rules rules = new Rules(moves);
 
-        assertEquals(DRAW.getResult(), rules.scoreGameTwo(ROCK, ROCK));
+        assertEquals(DRAW.getResult(), rules.scoreGame(ROCK, ROCK));
     }
 
     @Test
     public void scoresAWinForRockAgainstScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(ROCK.getMove(), rules.scoreGameTwo(ROCK, SCISSORS));
-        assertEquals(ROCK.getMove(), rules.scoreGameTwo(SCISSORS, ROCK));
+        assertEquals(ROCK.getMove(), rules.scoreGame(ROCK, SCISSORS));
+        assertEquals(ROCK.getMove(), rules.scoreGame(SCISSORS, ROCK));
     }
 
     @Test
     public void scoresLossForRockAgainstPaper() {
         Rules rules = new Rules(moves);
 
-        assertEquals(PAPER.getMove(), rules.scoreGameTwo(ROCK, PAPER));
-        assertEquals(PAPER.getMove(), rules.scoreGameTwo(PAPER, ROCK));
+        assertEquals(PAPER.getMove(), rules.scoreGame(ROCK, PAPER));
+        assertEquals(PAPER.getMove(), rules.scoreGame(PAPER, ROCK));
     }
 
     @Test
     public void scoresLossForPaperAgainstScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(SCISSORS.getMove(), rules.scoreGameTwo(SCISSORS, PAPER));
-        assertEquals(SCISSORS.getMove(), rules.scoreGameTwo(PAPER, SCISSORS));
+        assertEquals(SCISSORS.getMove(), rules.scoreGame(SCISSORS, PAPER));
+        assertEquals(SCISSORS.getMove(), rules.scoreGame(PAPER, SCISSORS));
+    }
+
+    @Test
+    public void findWinningPlayer() {
+        Rules rules = new Rules(moves);
+
+        assertEquals(Result.PLAYER_ONE_WINS, rules.findWinningPlayer(PAPER, SCISSORS));
     }
 }

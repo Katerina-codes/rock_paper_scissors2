@@ -1,7 +1,7 @@
 package main.game;
 
 public enum Result {
-    DRAW("draw");
+    DRAW("draw"), PLAYER_ONE_WINS(""), PLAYER_TWO_WINS("");
 
     private String result;
 
