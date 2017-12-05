@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CommandlineUiTest {
 
@@ -26,7 +27,9 @@ public class CommandlineUiTest {
 
     @Test
     public void asksUserToEnterMove() {
-        assertEquals("Pick a move. Enter 'rock', 'paper' or 'scissors': ", ui.askForMove());
+        ui.askForMove();
+
+        assertTrue(output.toString().contains("Pick a move. Enter 'rock', 'paper' or 'scissors': "));
     }
 
     @Test
@@ -39,6 +42,8 @@ public class CommandlineUiTest {
 
     @Test
     public void announcesWinner() {
-        assertEquals("rock wins!", ui.announceWinner("rock"));
+        ui.announceWinner("rock");
+
+        assertTrue(output.toString().contains("rock wins!"));
     }
 }

@@ -2,18 +2,18 @@ package main.game;
 
 import java.io.*;
 
-public class CommandlineUi {
+public class CommandlineUi implements Ui {
 
-    private PrintStream output;
-    private BufferedReader input;
+    private final PrintStream output;
+    private final BufferedReader input;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
     }
 
-    public String askForMove() {
-        return "Pick a move. Enter 'rock', 'paper' or 'scissors': ";
+    public void askForMove() {
+        output.println("Pick a move. Enter 'rock', 'paper' or 'scissors': ");
     }
 
     public String getsMove() {
@@ -26,7 +26,7 @@ public class CommandlineUi {
         return userMove;
     }
 
-    public String announceWinner(String winningMove) {
-        return (String.format("%s wins!", winningMove));
+    public void announceWinner(String winningMove) {
+         output.println(String.format("%s wins!", winningMove));
     }
 }
