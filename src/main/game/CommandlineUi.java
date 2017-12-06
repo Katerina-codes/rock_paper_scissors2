@@ -22,16 +22,6 @@ public class CommandlineUi implements Ui {
         output.println("Pick a move. Enter 'rock', 'paper' or 'scissors': ");
     }
 
-    public String getsMove() {
-        String userMove = null;
-        try {
-            userMove = input.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return userMove;
-    }
-
     public Moves getsMoveTwo() {
         String userMove = null;
         try {
@@ -49,15 +39,11 @@ public class CommandlineUi implements Ui {
 
     public String convertWinningMove(Result winningMove) {
         HashMap<Result, String> convertedResult = new HashMap<>();
-        convertedResult.put(Result.PLAYER_ONE_WINS, "Player one wins!");
-        convertedResult.put(Result.PLAYER_TWO_WINS, "Player two wins!");
+        convertedResult.put(Result.PLAYER_ONE_WINS, "Player One");
+        convertedResult.put(Result.PLAYER_TWO_WINS, "Player Two");
         convertedResult.put(Result.DRAW, "It's a draw!");
 
         return convertedResult.get(winningMove);
-    }
-
-    public void announceWinner(String winningMove) {
-        output.println(String.format("%s wins!", winningMove));
     }
 
     public void announceWinnerTwo(Result winningMove) {

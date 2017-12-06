@@ -7,22 +7,11 @@ import main.game.Ui;
 public class FakeCommandlineUi implements Ui {
 
     private boolean askForMoveWasCalled = false;
-    private boolean announceWinnerWasCalled = false;
-    private boolean getsMoveFromUserWasCalled = false;
     private boolean announceWinnerTwoWasCalled = false;
     private boolean getsMoveFromUserTwoWasCalled = false;
 
     public void askForMove() {
         this.askForMoveWasCalled = true;
-    }
-
-    public String getsMove() {
-        getsMoveFromUserWasCalled = true;
-        return "rock";
-    }
-
-    public void announceWinner(String winningMove) {
-        this.announceWinnerWasCalled = true;
     }
 
     public Moves getsMoveTwo() {
@@ -42,14 +31,6 @@ public class FakeCommandlineUi implements Ui {
         return askForMoveWasCalled;
     }
 
-
-    public boolean getsMoveFromUserWasCalled() {
-        return getsMoveFromUserWasCalled;
-    }
-
-    public boolean announceWinnerWasCalled() {
-        return announceWinnerWasCalled;
-    }
 
     public boolean getsMoveFromUserTwoWasCalled() {
         return getsMoveFromUserTwoWasCalled;

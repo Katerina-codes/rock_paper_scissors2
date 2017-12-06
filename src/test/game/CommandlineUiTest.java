@@ -1,6 +1,8 @@
 package test.game;
 
 import main.game.CommandlineUi;
+import main.game.Moves;
+import main.game.Result;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -37,13 +39,13 @@ public class CommandlineUiTest {
         InputStream input = new ByteArrayInputStream("rock".getBytes());
         CommandlineUi ui = new CommandlineUi(new PrintStream(output), input);
 
-        assertEquals("rock", ui.getsMove());
+        assertEquals(Moves.ROCK, ui.getsMoveTwo());
     }
 
     @Test
     public void announcesWinner() {
-        ui.announceWinner("rock");
+        ui.announceWinnerTwo(Result.PLAYER_ONE_WINS);
 
-        assertTrue(output.toString().contains("rock wins!"));
+        assertTrue(output.toString().contains("Player One"));
     }
 }

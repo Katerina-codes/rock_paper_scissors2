@@ -26,19 +26,6 @@ public class GameTest {
     }
 
     @Test
-    public void runsTheGame() {
-        FakeCommandlineUi inputOutput = new FakeCommandlineUi();
-        Rules rules = new Rules(moves);
-        Game game = new Game(inputOutput, rules);
-
-        game.runGame();
-
-        assertTrue(inputOutput.askForMoveWasCalled());
-        assertTrue(inputOutput.getsMoveFromUserWasCalled());
-        assertTrue(inputOutput.announceWinnerWasCalled());
-    }
-
-    @Test
     public void runsGame() {
         FakeCommandlineUi inputOutput = new FakeCommandlineUi();
         Rules rules = new Rules(moves);

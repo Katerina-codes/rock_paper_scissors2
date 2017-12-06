@@ -4,11 +4,11 @@ import static main.game.Moves.*;
 
 public class Scissors implements Move {
     @Override
-    public String scoreAgainst(Moves playerTwoMove) {
+    public Moves scoreAgainst(Moves playerTwoMove) {
         if (playerTwoMove.equals(PAPER)) {
-            return SCISSORS.getMove();
+            return SCISSORS;
         } else {
-            return ROCK.getMove();
+            return ROCK;
         }
     }
 }

@@ -12,22 +12,17 @@ public class Rules {
         this.moves = moves;
     }
 
-    public String scoreGame(Moves playerOneMove, Moves playerTwoMove) {
-        if (playerOneMove.equals(playerTwoMove)) {
-            return DRAW.getResult();
-        } else {
-            return moves.get(playerOneMove).scoreAgainst(playerTwoMove);
-        }
-    }
-
-
     public Result scoreGameTwo(Moves playerOneMove, Moves playerTwoMove) {
         if (playerOneMove.equals(playerTwoMove)) {
             return DRAW;
         } else {
-            Moves winningMove = Moves.ROCK;
+            Moves winningMove = scoreMove(playerOneMove, playerTwoMove);
             return findWinningPlayer(playerOneMove, winningMove);
         }
+    }
+
+    public Moves scoreMove(Moves playerOneMove, Moves playerTwoMove) {
+        return moves.get(playerOneMove).scoreAgainst(playerTwoMove);
     }
 
     public Result findWinningPlayer(Moves playerOneMove, Moves winningMove) {

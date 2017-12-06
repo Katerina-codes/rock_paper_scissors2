@@ -10,20 +10,10 @@ public class Game {
         this.rules = rules;
     }
 
-    public void runGame() {
-        inputOutput.askForMove();
-        String playerOneMove = inputOutput.getsMove();
-        Moves convertedPlayerOneMove = inputOutput.convertMove(playerOneMove);
-        inputOutput.askForMove();
-        String playerTwoMove = inputOutput.getsMove();
-        Moves convertedPlayerTwoMove = inputOutput.convertMove(playerTwoMove);
-        String winningMove = rules.scoreGame(convertedPlayerOneMove, convertedPlayerTwoMove);
-        inputOutput.announceWinner(winningMove);
-    }
-
     public void runGameTwo() {
         inputOutput.askForMove();
         Moves playerOneMove = inputOutput.getsMoveTwo();
+        inputOutput.askForMove();
         Moves playerTwoMove = inputOutput.getsMoveTwo();
         Result winningMove = rules.scoreGameTwo(playerOneMove, playerTwoMove);
         inputOutput.announceWinnerTwo(winningMove);

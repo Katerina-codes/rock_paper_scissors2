@@ -31,31 +31,31 @@ public class RulesTest {
 
         Rules rules = new Rules(moves);
 
-        assertEquals(DRAW.getResult(), rules.scoreGame(ROCK, ROCK));
+        assertEquals(DRAW, rules.scoreGameTwo(ROCK, ROCK));
     }
 
     @Test
     public void scoresAWinForRockAgainstScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(ROCK.getMove(), rules.scoreGame(ROCK, SCISSORS));
-        assertEquals(ROCK.getMove(), rules.scoreGame(SCISSORS, ROCK));
+        assertEquals(ROCK, rules.scoreMove(ROCK, SCISSORS));
+        assertEquals(ROCK, rules.scoreMove(SCISSORS, ROCK));
     }
 
     @Test
     public void scoresLossForRockAgainstPaper() {
         Rules rules = new Rules(moves);
 
-        assertEquals(PAPER.getMove(), rules.scoreGame(ROCK, PAPER));
-        assertEquals(PAPER.getMove(), rules.scoreGame(PAPER, ROCK));
+        assertEquals(PAPER, rules.scoreMove(ROCK, PAPER));
+        assertEquals(PAPER, rules.scoreMove(PAPER, ROCK));
     }
 
     @Test
     public void scoresLossForPaperAgainstScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(SCISSORS.getMove(), rules.scoreGame(SCISSORS, PAPER));
-        assertEquals(SCISSORS.getMove(), rules.scoreGame(PAPER, SCISSORS));
+        assertEquals(SCISSORS, rules.scoreMove(SCISSORS, PAPER));
+        assertEquals(SCISSORS, rules.scoreMove(PAPER, SCISSORS));
     }
 
     @Test

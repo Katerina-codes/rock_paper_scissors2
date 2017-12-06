@@ -3,12 +3,11 @@ package main.game;
 import static main.game.Moves.*;
 
 public class Paper implements Move {
-    @Override
-    public String scoreAgainst(Moves playerTwoMove) {
+    public Moves scoreAgainst(Moves playerTwoMove) {
         if (playerTwoMove.equals(ROCK)) {
-            return PAPER.getMove();
+            return PAPER;
         } else {
-            return SCISSORS.getMove();
+            return SCISSORS;
         }
     }
 }
