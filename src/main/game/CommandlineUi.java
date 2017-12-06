@@ -7,10 +7,15 @@ public class CommandlineUi implements Ui {
 
     private final PrintStream output;
     private final BufferedReader input;
+    private HashMap convertedMove;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
+        convertedMove = new HashMap<>();
+        convertedMove.put("rock", Moves.ROCK);
+        convertedMove.put("paper", Moves.PAPER);
+        convertedMove.put("scissors", Moves.SCISSORS);
     }
 
     public void askForMove() {
@@ -39,12 +44,7 @@ public class CommandlineUi implements Ui {
     }
 
     public Moves convertMove(String userMove) {
-        HashMap<String, Moves> convertedMove = new HashMap<>();
-        convertedMove.put("rock", Moves.ROCK);
-        convertedMove.put("paper", Moves.PAPER);
-        convertedMove.put("scissors", Moves.SCISSORS);
-
-        return convertedMove.get(userMove);
+        return (Moves) convertedMove.get(userMove);
     }
 
     public String convertWinningMove(Result winningMove) {
