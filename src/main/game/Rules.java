@@ -25,11 +25,12 @@ public class Rules {
         if (playerOneMove.equals(playerTwoMove)) {
             return DRAW;
         } else {
-            return findWinningPlayer(playerOneMove, playerTwoMove);
+            Moves winningMove = Moves.ROCK;
+            return findWinningPlayer(playerOneMove, playerTwoMove, winningMove);
         }
     }
 
-    public Result findWinningPlayer(Moves playerOneMove, Moves playerTwoMove) {
+    public Result findWinningPlayer(Moves playerOneMove, Moves playerTwoMove, Moves winningMove) {
         return Result.PLAYER_ONE_WINS;
     }
 }
