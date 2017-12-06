@@ -10,6 +10,7 @@ public class FakeCommandlineUi implements Ui {
     private boolean announceWinnerWasCalled = false;
     private boolean getsMoveFromUserWasCalled = false;
     private boolean announceWinnerTwoWasCalled = false;
+    private boolean getsMoveTwoWasCalled = false;
 
     public void askForMove() {
         this.askForMoveWasCalled = true;
@@ -26,7 +27,8 @@ public class FakeCommandlineUi implements Ui {
 
     @Override
     public Moves getsMoveTwo() {
-        return null;
+        getsMoveTwoWasCalled = true;
+        return Moves.ROCK;
     }
 
     @Override
@@ -38,7 +40,6 @@ public class FakeCommandlineUi implements Ui {
     public Moves convertMove(String playerOneMove) {
         return Moves.ROCK;
     }
-
 
     public boolean askForMoveWasCalled() {
         return askForMoveWasCalled;
@@ -55,4 +56,10 @@ public class FakeCommandlineUi implements Ui {
     public boolean getsMoveFromUserWasCalled() {
         return getsMoveFromUserWasCalled;
     }
+
+    public boolean getsMoveTwoWasCalled() {
+        return getsMoveTwoWasCalled;
+    }
 }
+
+
