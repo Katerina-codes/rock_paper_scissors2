@@ -22,7 +22,7 @@ public class CommandlineUi implements Ui {
         output.println("Pick a move. Enter 'rock', 'paper' or 'scissors': ");
     }
 
-    public Moves getsMoveTwo() {
+    public Moves getMove() {
         String userMove = null;
         try {
             userMove = input.readLine();
@@ -46,7 +46,7 @@ public class CommandlineUi implements Ui {
         return convertedResult.get(winningMove);
     }
 
-    public void announceWinnerTwo(Result winningMove) {
+    public void announceWinner(Result winningMove) {
         String convertedWinningMove = convertWinningMove(winningMove);
         output.println(String.format("%s wins!", convertedWinningMove));
     }

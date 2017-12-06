@@ -31,7 +31,7 @@ public class RulesTest {
 
         Rules rules = new Rules(moves);
 
-        assertEquals(DRAW, rules.scoreGameTwo(ROCK, ROCK));
+        assertEquals(DRAW, rules.findWinningPLayer(ROCK, ROCK));
     }
 
     @Test
@@ -62,13 +62,13 @@ public class RulesTest {
     public void playerOneWinsWhenPlayerOneIsScissorsAndWinningMoveIsScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(Result.PLAYER_ONE_WINS, rules.findWinningPlayer(SCISSORS, SCISSORS));
+        assertEquals(Result.PLAYER_ONE_WINS, rules.scoreGame(SCISSORS, SCISSORS));
     }
 
     @Test
     public void playerOneWinsWhenPlayerTwoIsScissorsAndWinningMoveIsScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(Result.PLAYER_TWO_WINS, rules.findWinningPlayer(PAPER, SCISSORS));
+        assertEquals(Result.PLAYER_TWO_WINS, rules.scoreGame(PAPER, SCISSORS));
     }
 }

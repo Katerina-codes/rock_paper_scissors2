@@ -39,12 +39,12 @@ public class CommandlineUiTest {
         InputStream input = new ByteArrayInputStream("rock".getBytes());
         CommandlineUi ui = new CommandlineUi(new PrintStream(output), input);
 
-        assertEquals(Moves.ROCK, ui.getsMoveTwo());
+        assertEquals(Moves.ROCK, ui.getMove());
     }
 
     @Test
     public void announcesWinner() {
-        ui.announceWinnerTwo(Result.PLAYER_ONE_WINS);
+        ui.announceWinner(Result.PLAYER_ONE_WINS);
 
         assertTrue(output.toString().contains("Player One"));
     }

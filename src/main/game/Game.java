@@ -12,10 +12,10 @@ public class Game {
 
     public void runGameTwo() {
         inputOutput.askForMove();
-        Moves playerOneMove = inputOutput.getsMoveTwo();
+        Moves playerOneMove = inputOutput.getMove();
         inputOutput.askForMove();
-        Moves playerTwoMove = inputOutput.getsMoveTwo();
-        Result winningMove = rules.scoreGameTwo(playerOneMove, playerTwoMove);
-        inputOutput.announceWinnerTwo(winningMove);
+        Moves playerTwoMove = inputOutput.getMove();
+        Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
+        inputOutput.announceWinner(winningMove);
     }
 }

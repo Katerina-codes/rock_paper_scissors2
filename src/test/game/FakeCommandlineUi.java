@@ -14,12 +14,12 @@ public class FakeCommandlineUi implements Ui {
         this.askForMoveWasCalled = true;
     }
 
-    public Moves getsMoveTwo() {
+    public Moves getMove() {
         getsMoveFromUserTwoWasCalled = true;
         return Moves.ROCK;
     }
 
-    public void announceWinnerTwo(Result winningMove) {
+    public void announceWinner(Result winningMove) {
         this.announceWinnerTwoWasCalled = true;
     }
 
