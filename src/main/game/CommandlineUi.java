@@ -7,19 +7,31 @@ public class CommandlineUi implements Ui {
 
     private final PrintStream output;
     private final BufferedReader input;
-    private HashMap convertedMove;
+    private Language language;
+    private HashMap<String, Moves> moves;
+    private HashMap<Result, String> results;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
-        convertedMove = new HashMap<>();
-        convertedMove.put("rock", Moves.ROCK);
-        convertedMove.put("paper", Moves.PAPER);
-        convertedMove.put("scissors", Moves.SCISSORS);
+        createMoveOptions();
+        createResultOptions();
+    }
+
+    public CommandlineUi(PrintStream output, InputStream input, Language language) {
+        this.output = output;
+        this.input = new BufferedReader(new InputStreamReader(input));
+        this.language = language;
+        createMoveOptions();
+        createResultOptions();
     }
 
     public void askForMove() {
         output.println("Pick a move. Enter 'rock', 'paper' or 'scissors': ");
+    }
+
+    public void askForMoveTwo() {
+        output.println(language.promptForMove());
     }
 
     public Moves getMove() {
@@ -29,21 +41,15 @@ public class CommandlineUi implements Ui {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Moves convertedUserMove = convertMove(userMove);
-        return convertedUserMove;
+        return convertMove(userMove);
     }
 
     public Moves convertMove(String userMove) {
-        return (Moves) convertedMove.get(userMove);
+        return moves.get(userMove);
     }
 
     public String convertWinningMove(Result winningMove) {
-        HashMap<Result, String> convertedResult = new HashMap<>();
-        convertedResult.put(Result.PLAYER_ONE_WINS, "Player One");
-        convertedResult.put(Result.PLAYER_TWO_WINS, "Player Two");
-        convertedResult.put(Result.DRAW, "It's a draw!");
-
-        return convertedResult.get(winningMove);
+        return results.get(winningMove);
     }
 
     public void announceWinner(Result winningMove) {
@@ -51,4 +57,17 @@ public class CommandlineUi implements Ui {
         output.println(String.format("%s wins!", convertedWinningMove));
     }
 
+    private void createMoveOptions() {
+        moves = new HashMap<>();
+        moves.put("rock", Moves.ROCK);
+        moves.put("paper", Moves.PAPER);
+        moves.put("scissors", Moves.SCISSORS);
+    }
+
+    private void createResultOptions() {
+        results = new HashMap<>();
+        results.put(Result.PLAYER_ONE_WINS, "Player One");
+        results.put(Result.PLAYER_TWO_WINS, "Player Two");
+        results.put(Result.DRAW, "It's a draw!");
+    }
 }
