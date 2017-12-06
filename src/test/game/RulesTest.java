@@ -71,4 +71,4 @@ public class RulesTest {
 
         assertEquals(Result.PLAYER_TWO_WINS, rules.findWinningPlayer(PAPER, SCISSORS));
     }
-}q
+}

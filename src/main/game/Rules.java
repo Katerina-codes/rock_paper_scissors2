@@ -3,7 +3,6 @@ package main.game;
 import java.util.Map;
 
 import static main.game.Result.DRAW;
-import static main.game.Result.PLAYER_ONE_WINS;
 
 public class Rules {
 
