@@ -59,9 +59,16 @@ public class RulesTest {
     }
 
     @Test
-    public void playerOneWinsWhenPlayerOneIsScissorsWinningMoveIsScissors() {
+    public void playerOneWinsWhenPlayerOneIsScissorsAndWinningMoveIsScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(Result.PLAYER_ONE_WINS, rules.findWinningPlayer(SCISSORS, PAPER, SCISSORS));
+        assertEquals(Result.PLAYER_ONE_WINS, rules.findWinningPlayer(SCISSORS, SCISSORS));
     }
-}
+
+    @Test
+    public void playerOneWinsWhenPlayerTwoIsScissorsAndWinningMoveIsScissors() {
+        Rules rules = new Rules(moves);
+
+        assertEquals(Result.PLAYER_TWO_WINS, rules.findWinningPlayer(PAPER, SCISSORS));
+    }
+}q

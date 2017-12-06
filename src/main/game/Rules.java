@@ -3,6 +3,7 @@ package main.game;
 import java.util.Map;
 
 import static main.game.Result.DRAW;
+import static main.game.Result.PLAYER_ONE_WINS;
 
 public class Rules {
 
@@ -26,11 +27,14 @@ public class Rules {
             return DRAW;
         } else {
             Moves winningMove = Moves.ROCK;
-            return findWinningPlayer(playerOneMove, playerTwoMove, winningMove);
+            return findWinningPlayer(playerOneMove, winningMove);
         }
     }
 
-    public Result findWinningPlayer(Moves playerOneMove, Moves playerTwoMove, Moves winningMove) {
-        return Result.PLAYER_ONE_WINS;
+    public Result findWinningPlayer(Moves playerOneMove, Moves winningMove) {
+        if (playerOneMove.equals(winningMove))
+            return Result.PLAYER_ONE_WINS;
+        else
+            return Result.PLAYER_TWO_WINS;
     }
 }
