@@ -37,4 +37,17 @@ public class GameTest {
         assertTrue(inputOutput.getsMoveFromUserWasCalled());
         assertTrue(inputOutput.announceWinnerWasCalled());
     }
+
+    @Test
+    public void runsGame() {
+        FakeCommandlineUi inputOutput = new FakeCommandlineUi();
+        Rules rules = new Rules(moves);
+        Game game = new Game(inputOutput, rules);
+
+        game.runGameTwo();
+
+        assertTrue(inputOutput.askForMoveWasCalled());
+        assertTrue(inputOutput.getsMoveFromUserTwoWasCalled());
+        assertTrue(inputOutput.announceWinnerTwoWasCalled());
+    }
 }

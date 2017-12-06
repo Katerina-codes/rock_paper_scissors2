@@ -10,7 +10,7 @@ public class FakeCommandlineUi implements Ui {
     private boolean announceWinnerWasCalled = false;
     private boolean getsMoveFromUserWasCalled = false;
     private boolean announceWinnerTwoWasCalled = false;
-    private boolean getsMoveTwoWasCalled = false;
+    private boolean getsMoveFromUserTwoWasCalled = false;
 
     public void askForMove() {
         this.askForMoveWasCalled = true;
@@ -25,18 +25,15 @@ public class FakeCommandlineUi implements Ui {
         this.announceWinnerWasCalled = true;
     }
 
-    @Override
     public Moves getsMoveTwo() {
-        getsMoveTwoWasCalled = true;
+        getsMoveFromUserTwoWasCalled = true;
         return Moves.ROCK;
     }
 
-    @Override
     public void announceWinnerTwo(Result winningMove) {
         this.announceWinnerTwoWasCalled = true;
     }
 
-    @Override
     public Moves convertMove(String playerOneMove) {
         return Moves.ROCK;
     }
@@ -45,20 +42,21 @@ public class FakeCommandlineUi implements Ui {
         return askForMoveWasCalled;
     }
 
-    public boolean announceWinnerWasCalled() {
-        return announceWinnerWasCalled;
-    }
-
-    public boolean announceWinnerTwoWasCalled() {
-        return announceWinnerTwoWasCalled;
-    }
 
     public boolean getsMoveFromUserWasCalled() {
         return getsMoveFromUserWasCalled;
     }
 
-    public boolean getsMoveTwoWasCalled() {
-        return getsMoveTwoWasCalled;
+    public boolean announceWinnerWasCalled() {
+        return announceWinnerWasCalled;
+    }
+
+    public boolean getsMoveFromUserTwoWasCalled() {
+        return getsMoveFromUserTwoWasCalled;
+    }
+
+    public boolean announceWinnerTwoWasCalled() {
+        return announceWinnerTwoWasCalled;
     }
 }
 
