@@ -48,7 +48,7 @@ public class CommandlineUi implements Ui {
     }
 
     public void askForLanguage() {
-       output.println(language.askForLanguage());
+        output.println(language.askForLanguage());
     }
 
     public String getLanguage() {
