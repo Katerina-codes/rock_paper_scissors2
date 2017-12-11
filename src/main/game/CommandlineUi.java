@@ -57,6 +57,11 @@ public class CommandlineUi implements Ui {
         output.println(String.format("%s wins!", convertedWinningMove));
     }
 
+    public void announceWinnerTwo(Result winningMove) {
+        String convertedWinningMove = convertWinningMove(winningMove);
+        output.println(language.announceWinner(convertedWinningMove));
+    }
+
     private void createMoveOptions() {
         moves = new HashMap<>();
         moves.put("rock", Moves.ROCK);
