@@ -22,7 +22,6 @@ public class CommandlineUiTest {
     public void setUp() {
         output = new ByteArrayOutputStream();
         input = new ByteArrayInputStream("".getBytes());
-        ui = new CommandlineUi(new PrintStream(output), input);
     }
 
     @Test
@@ -36,8 +35,9 @@ public class CommandlineUiTest {
 
     @Test
     public void getMoveFromUser() {
+        English englishLanguage = new English();
         InputStream input = new ByteArrayInputStream("rock".getBytes());
-        CommandlineUi ui = new CommandlineUi(new PrintStream(output), input);
+        CommandlineUi ui = new CommandlineUi(new PrintStream(output), input, englishLanguage);
 
         assertEquals(Moves.ROCK, ui.getMove());
     }

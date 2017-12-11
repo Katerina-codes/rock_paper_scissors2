@@ -33,9 +33,8 @@ public class GameTest {
 
         game.runGameTwo();
 
-        assertTrue(inputOutput.askForMoveWasCalled());
+        assertTrue(inputOutput.askForMoveTwoWasCalled());
         assertTrue(inputOutput.getsMoveFromUserWasCalled());
-        assertTrue(inputOutput.announceWinnerWasCalled());
-
+        assertTrue(inputOutput.announceWinnerTwoWasCalled());
     }
 }

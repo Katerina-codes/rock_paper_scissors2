@@ -11,12 +11,6 @@ public class CommandlineUi implements Ui {
     private HashMap<String, Moves> moves;
     private HashMap<Result, String> results;
 
-    public CommandlineUi(PrintStream output, InputStream input) {
-        this.output = output;
-        this.input = new BufferedReader(new InputStreamReader(input));
-        createMoveOptions();
-        createResultOptions();
-    }
 
     public CommandlineUi(PrintStream output, InputStream input, Language language) {
         this.output = output;
@@ -24,10 +18,6 @@ public class CommandlineUi implements Ui {
         this.language = language;
         createMoveOptions();
         createResultOptions();
-    }
-
-    public void askForMove() {
-        output.println("Pick a move. Enter 'rock', 'paper' or 'scissors': ");
     }
 
     public void askForMoveTwo() {
@@ -50,11 +40,6 @@ public class CommandlineUi implements Ui {
 
     public String convertWinningMove(Result winningMove) {
         return results.get(winningMove);
-    }
-
-    public void announceWinner(Result winningMove) {
-        String convertedWinningMove = convertWinningMove(winningMove);
-        output.println(String.format("%s wins!", convertedWinningMove));
     }
 
     public void announceWinnerTwo(Result winningMove) {

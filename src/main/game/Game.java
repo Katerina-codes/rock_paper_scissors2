@@ -11,11 +11,11 @@ public class Game {
     }
 
     public void runGameTwo() {
-        inputOutput.askForMove();
+        inputOutput.askForMoveTwo();
         Moves playerOneMove = inputOutput.getMove();
-        inputOutput.askForMove();
+        inputOutput.askForMoveTwo();
         Moves playerTwoMove = inputOutput.getMove();
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
-        inputOutput.announceWinner(winningMove);
+        inputOutput.announceWinnerTwo(winningMove);
     }
 }
