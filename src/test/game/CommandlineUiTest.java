@@ -71,4 +71,10 @@ public class CommandlineUiTest {
         Language language = UI.createLanguageOptions("1");
         assertTrue(language instanceof English);
     }
+
+    @Test
+    public void getGreekLanguage() {
+        Language language = UI.createLanguageOptions("2");
+        assertTrue(language instanceof Greek);
+    }
 }

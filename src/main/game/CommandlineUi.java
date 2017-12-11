@@ -76,6 +76,10 @@ public class CommandlineUi implements Ui {
     }
 
     public Language createLanguageOptions(String userChoice) {
-        return new English();
+        if (userChoice.equals("1")) {
+            return new English();
+        } else {
+            return new Greek();
+        }
     }
 }
