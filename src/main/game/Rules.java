@@ -26,9 +26,10 @@ public class Rules {
     }
 
     public Result scoreGame(Moves playerOneMove, Moves winningMove) {
-        if (playerOneMove.equals(winningMove))
+        if (playerOneMove.equals(winningMove)) {
             return Result.PLAYER_ONE_WINS;
-        else
+        } else {
             return Result.PLAYER_TWO_WINS;
+        }
     }
 }
