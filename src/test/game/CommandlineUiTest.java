@@ -1,8 +1,6 @@
 package test.game;
 
-import main.game.CommandlineUi;
-import main.game.Moves;
-import main.game.Result;
+import main.game.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,7 +27,9 @@ public class CommandlineUiTest {
 
     @Test
     public void asksUserToEnterMove() {
-        ui.askForMove();
+        English englishLanguage = new English();
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        UI.askForMoveTwo();
 
         assertTrue(output.toString().contains("Pick a move. Enter 'rock', 'paper' or 'scissors': "));
     }
