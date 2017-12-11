@@ -16,18 +16,19 @@ public class CommandlineUiTest {
 
     private ByteArrayOutputStream output;
     private InputStream input;
-    private CommandlineUi ui;
+    private English englishLanguage;
+    private CommandlineUi UI;
 
     @Before
     public void setUp() {
         output = new ByteArrayOutputStream();
         input = new ByteArrayInputStream("".getBytes());
+        englishLanguage = new English();
+        UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
     }
 
     @Test
     public void asksUserToEnterMove() {
-        English englishLanguage = new English();
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
         UI.askForMoveTwo();
 
         assertTrue(output.toString().contains("Pick a move. Enter 'rock', 'paper' or 'scissors': "));
@@ -35,17 +36,14 @@ public class CommandlineUiTest {
 
     @Test
     public void getMoveFromUser() {
-        English englishLanguage = new English();
         InputStream input = new ByteArrayInputStream("rock".getBytes());
-        CommandlineUi ui = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
 
-        assertEquals(Moves.ROCK, ui.getMove());
+        assertEquals(Moves.ROCK, UI.getMove());
     }
 
     @Test
     public void announcesWinner() {
-        English englishLanguage = new English();
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
         UI.announceWinnerTwo(Result.PLAYER_ONE_WINS);
 
         assertTrue(output.toString().contains("Player One"));
