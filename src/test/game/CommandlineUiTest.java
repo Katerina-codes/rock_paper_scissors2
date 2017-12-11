@@ -65,4 +65,10 @@ public class CommandlineUiTest {
 
         assertTrue(output.toString().contains("Player One"));
     }
+
+    @Test
+    public void getEnglishLanguage() {
+        Language language = UI.createLanguageOptions("1");
+        assertTrue(language instanceof English);
+    }
 }
