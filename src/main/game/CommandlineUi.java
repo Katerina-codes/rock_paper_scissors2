@@ -47,6 +47,10 @@ public class CommandlineUi implements Ui {
         output.println(language.announceWinner(convertedWinningMove));
     }
 
+    public void askForLanguage() {
+       output.println(language.askForLanguage());
+    }
+
     private void createMoveOptions() {
         moves = new HashMap<>();
         moves.put("rock", Moves.ROCK);

@@ -28,6 +28,15 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void askForLanguage() {
+        UI.askForLanguage();
+
+        assertTrue(output.toString().contains("Choose your language:" +
+                "Enter '1' for English\n" +
+                "Eiságete dýo gia Ελληνικά"));
+    }
+
+    @Test
     public void asksUserToEnterMove() {
         UI.askForMoveTwo();
 

@@ -9,6 +9,7 @@ public class FakeCommandlineUi implements Ui {
     private boolean getsMoveFromUserWasCalled = false;
     private boolean announceWinnerTwoWasCalled = false;
     private boolean askForMoveTwoWasCalled = false;
+    private boolean askForLanguageWasCalled = false;
 
     public Moves getMove() {
         getsMoveFromUserWasCalled = true;
@@ -23,8 +24,16 @@ public class FakeCommandlineUi implements Ui {
        this.announceWinnerTwoWasCalled = true;
     }
 
+    public void askForLanguage() {
+        this.askForLanguageWasCalled = true;
+    }
+
     public void askForMoveTwo() {
         this.askForMoveTwoWasCalled = true;
+    }
+
+    public boolean askForLanguageWasCalled() {
+        return askForLanguageWasCalled;
     }
 
     public boolean getsMoveFromUserWasCalled() {

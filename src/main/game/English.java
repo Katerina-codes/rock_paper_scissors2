@@ -8,4 +8,10 @@ public class English implements Language {
     public String announceWinner(String convertedWinningMove) {
         return (String.format("%s wins!", convertedWinningMove));
     }
+
+    public String askForLanguage() {
+        return "Choose your language:" +
+                "Enter '1' for English\n" +
+                "Eiságete dýo gia Ελληνικά";
+    }
 }

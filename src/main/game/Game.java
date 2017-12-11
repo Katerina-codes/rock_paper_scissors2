@@ -11,6 +11,7 @@ public class Game {
     }
 
     public void runGameTwo() {
+        inputOutput.askForLanguage();
         inputOutput.askForMoveTwo();
         Moves playerOneMove = inputOutput.getMove();
         inputOutput.askForMoveTwo();

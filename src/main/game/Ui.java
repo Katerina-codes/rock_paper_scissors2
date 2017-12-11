@@ -5,4 +5,5 @@ public interface Ui {
     Moves convertMove(String playerOneMove);
     void askForMoveTwo();
     void announceWinnerTwo(Result playerOneWins);
+    void askForLanguage();
 }
