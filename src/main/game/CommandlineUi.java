@@ -51,6 +51,16 @@ public class CommandlineUi implements Ui {
        output.println(language.askForLanguage());
     }
 
+    public String getLanguage() {
+        String userChoice = null;
+        try {
+            userChoice = input.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return userChoice;
+    }
+
     private void createMoveOptions() {
         moves = new HashMap<>();
         moves.put("rock", Moves.ROCK);

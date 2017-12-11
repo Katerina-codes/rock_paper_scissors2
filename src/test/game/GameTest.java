@@ -34,6 +34,7 @@ public class GameTest {
         game.runGameTwo();
 
         assertTrue(inputOutput.askForLanguageWasCalled());
+        assertTrue(inputOutput.getLanguageWasCalled());
         assertTrue(inputOutput.askForMoveTwoWasCalled());
         assertTrue(inputOutput.getsMoveFromUserWasCalled());
         assertTrue(inputOutput.announceWinnerTwoWasCalled());

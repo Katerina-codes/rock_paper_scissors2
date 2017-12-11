@@ -10,6 +10,7 @@ public class FakeCommandlineUi implements Ui {
     private boolean announceWinnerTwoWasCalled = false;
     private boolean askForMoveTwoWasCalled = false;
     private boolean askForLanguageWasCalled = false;
+    private boolean getLanguageWasCalled = false;
 
     public Moves getMove() {
         getsMoveFromUserWasCalled = true;
@@ -21,11 +22,16 @@ public class FakeCommandlineUi implements Ui {
     }
 
     public void announceWinnerTwo(Result playerOneWins) {
-       this.announceWinnerTwoWasCalled = true;
+        this.announceWinnerTwoWasCalled = true;
     }
 
     public void askForLanguage() {
         this.askForLanguageWasCalled = true;
+    }
+
+    public String getLanguage() {
+        this.getLanguageWasCalled = true;
+        return "1";
     }
 
     public void askForMoveTwo() {
@@ -47,6 +53,8 @@ public class FakeCommandlineUi implements Ui {
     public boolean askForMoveTwoWasCalled() {
         return askForMoveTwoWasCalled;
     }
+
+    public boolean getLanguageWasCalled() {
+        return getLanguageWasCalled;
+    }
 }
-
-

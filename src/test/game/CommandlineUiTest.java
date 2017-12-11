@@ -37,6 +37,14 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void getLanguage() {
+        InputStream input = new ByteArrayInputStream("1".getBytes());
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+
+        assertEquals("1", UI.getLanguage());
+    }
+
+    @Test
     public void asksUserToEnterMove() {
         UI.askForMoveTwo();
 
