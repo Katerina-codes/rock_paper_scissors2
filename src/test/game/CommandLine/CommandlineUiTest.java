@@ -21,18 +21,18 @@ public class CommandlineUiTest {
 
     private ByteArrayOutputStream output;
     private InputStream input;
-    private CommandlineUi UI;
+    private CommandlineUi ui;
 
     @Before
     public void setUp() {
         output = new ByteArrayOutputStream();
         input = new ByteArrayInputStream("".getBytes());
-        UI = new CommandlineUi(new PrintStream(output), input);
+        ui = new CommandlineUi(new PrintStream(output), input);
     }
 
     @Test
     public void askForLanguage() {
-        UI.askForLanguage();
+        ui.askForLanguage();
 
         assertTrue(output.toString().contains("Enter '1' for English\n" +
                 "Eισάγετε '2' για Ελληνικά"));
@@ -47,7 +47,7 @@ public class CommandlineUiTest {
 
     @Test
     public void asksUserToEnterMove() {
-        UI.askForMoveTwo();
+        ui.askForMoveTwo();
 
         assertTrue(output.toString().contains("Pick a move. Enter 'rock', 'paper' or 'scissors': "));
     }
@@ -61,20 +61,20 @@ public class CommandlineUiTest {
 
     @Test
     public void announcesWinner() {
-        UI.announceWinnerTwo(Result.PLAYER_ONE_WINS);
+        ui.announceWinnerTwo(Result.PLAYER_ONE_WINS);
 
         assertTrue(output.toString().contains("Player One"));
     }
 
     @Test
     public void getEnglishLanguage() {
-        Language language = UI.createLanguageOptions("1");
+        Language language = ui.createLanguageOptions("1");
         assertTrue(language instanceof English);
     }
 
     @Test
     public void getGreekLanguage() {
-        Language language = UI.createLanguageOptions("2");
+        Language language = ui.createLanguageOptions("2");
         assertTrue(language instanceof Greek);
     }
 
