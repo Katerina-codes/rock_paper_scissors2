@@ -106,5 +106,4 @@ public class CommandlineUi implements Ui {
         results.put(Result.PLAYER_TWO_WINS, "Player Two");
         results.put(Result.DRAW, "It's a draw!");
     }
-
 }
