@@ -1,4 +1,4 @@
-package main.game;
+package main.game.Language;
 
 public class English implements Language {
     public String promptForMove() {

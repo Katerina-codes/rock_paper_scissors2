@@ -1,4 +1,4 @@
-package main.game;
+package main.game.Language;
 
 public interface Language {
     String promptForMove();

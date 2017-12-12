@@ -1,5 +1,7 @@
 package main.game;
 
+import main.game.Moves.Moves;
+
 public class Game {
 
     private final Ui inputOutput;

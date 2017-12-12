@@ -1,5 +1,8 @@
 package main.game;
 
+import main.game.Moves.Move;
+import main.game.Moves.Moves;
+
 import java.util.Map;
 
 import static main.game.Result.DRAW;

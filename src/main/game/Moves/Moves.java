@@ -1,4 +1,4 @@
-package main.game;
+package main.game.Moves;
 
 public enum Moves {
     ROCK,

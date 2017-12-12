@@ -1,9 +1,9 @@
-package main.game;
+package main.game.Moves;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static main.game.Moves.*;
+import static main.game.Moves.Moves.*;
 
 public class MoveFactory {
 

@@ -1,6 +1,11 @@
-package test.game;
+package test.game.CommandLine;
 
 import main.game.*;
+import main.game.CommandLine.CommandlineUi;
+import main.game.Language.English;
+import main.game.Language.Greek;
+import main.game.Language.Language;
+import main.game.Moves.Moves;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,15 +21,12 @@ public class CommandlineUiTest {
 
     private ByteArrayOutputStream output;
     private InputStream input;
-    private Language language;
-    private English englishLanguage;
     private CommandlineUi UI;
 
     @Before
     public void setUp() {
         output = new ByteArrayOutputStream();
         input = new ByteArrayInputStream("".getBytes());
-        englishLanguage = new English();
         UI = new CommandlineUi(new PrintStream(output), input);
     }
 

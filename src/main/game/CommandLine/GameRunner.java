@@ -1,4 +1,9 @@
-package main.game;
+package main.game.CommandLine;
+
+import main.game.CommandLine.CommandlineUi;
+import main.game.Game;
+import main.game.Moves.MoveFactory;
+import main.game.Rules;
 
 public class GameRunner {
     public static void main(String[] args) {

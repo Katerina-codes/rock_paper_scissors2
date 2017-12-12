@@ -1,6 +1,6 @@
-package test.game;
+package test.game.CommandLine;
 
-import main.game.Moves;
+import main.game.Moves.Moves;
 import main.game.Result;
 import main.game.Ui;
 

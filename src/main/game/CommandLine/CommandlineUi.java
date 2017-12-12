@@ -1,4 +1,11 @@
-package main.game;
+package main.game.CommandLine;
+
+import main.game.Language.English;
+import main.game.Language.Greek;
+import main.game.Language.Language;
+import main.game.Moves.Moves;
+import main.game.Result;
+import main.game.Ui;
 
 import java.io.*;
 import java.util.HashMap;

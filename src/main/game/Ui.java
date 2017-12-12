@@ -1,5 +1,7 @@
 package main.game;
 
+import main.game.Moves.Moves;
+
 public interface Ui {
     Moves getMove();
 

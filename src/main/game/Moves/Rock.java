@@ -1,6 +1,9 @@
-package main.game;
+package main.game.Moves;
 
-import static main.game.Moves.*;
+import main.game.Moves.Move;
+import main.game.Moves.Moves;
+
+import static main.game.Moves.Moves.*;
 
 public class Rock implements Move {
     public Moves scoreAgainst(Moves playerTwoMove) {

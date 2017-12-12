@@ -1,4 +1,4 @@
-package main.game;
+package main.game.Language;
 
 public class Greek implements Language {
 

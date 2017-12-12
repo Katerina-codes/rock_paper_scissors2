@@ -1,6 +1,6 @@
-package test.game;
+package test.game.Language;
 
-import main.game.English;
+import main.game.Language.English;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

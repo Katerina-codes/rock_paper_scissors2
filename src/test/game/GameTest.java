@@ -1,13 +1,18 @@
 package test.game;
 
 import main.game.*;
+import main.game.Moves.Move;
+import main.game.Moves.Paper;
+import main.game.Moves.Rock;
+import main.game.Moves.Scissors;
 import org.junit.Before;
 import org.junit.Test;
+import test.game.CommandLine.FakeCommandlineUi;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static main.game.Moves.*;
+import static main.game.Moves.Moves.*;
 import static org.junit.Assert.assertTrue;
 
 public class GameTest {
