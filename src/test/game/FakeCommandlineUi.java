@@ -11,6 +11,7 @@ public class FakeCommandlineUi implements Ui {
     private boolean askForMoveTwoWasCalled = false;
     private boolean askForLanguageWasCalled = false;
     private boolean getLanguageWasCalled = false;
+    private boolean setUserLanguageWasCalled = false;
 
     public Moves getMove() {
         getsMoveFromUserWasCalled = true;
@@ -34,9 +35,18 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
+    public void setUserLanguage() {
+       this.setUserLanguageWasCalled = true;
+    }
+
     public void askForMoveTwo() {
         this.askForMoveTwoWasCalled = true;
     }
+
+    public boolean setUserLanguageWasCalled() {
+        return setUserLanguageWasCalled;
+    }
+
 
     public boolean askForLanguageWasCalled() {
         return askForLanguageWasCalled;

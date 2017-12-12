@@ -24,7 +24,7 @@ public class CommandlineUiTest {
         output = new ByteArrayOutputStream();
         input = new ByteArrayInputStream("".getBytes());
         englishLanguage = new English();
-        UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        UI = new CommandlineUi(new PrintStream(output), input);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class CommandlineUiTest {
     @Test
     public void getLanguage() {
         InputStream input = new ByteArrayInputStream("1".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
 
         assertEquals("1", UI.getLanguage());
     }
@@ -54,7 +54,7 @@ public class CommandlineUiTest {
     @Test
     public void getMoveFromUser() {
         InputStream input = new ByteArrayInputStream("rock".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
 
         assertEquals(Moves.ROCK, UI.getMove());
     }
@@ -81,7 +81,7 @@ public class CommandlineUiTest {
     @Test
     public void setLanguageToEnglish() {
         InputStream input = new ByteArrayInputStream("1".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
         Language language = UI.setLanguage();
 
         assertTrue(language instanceof English);
@@ -90,7 +90,7 @@ public class CommandlineUiTest {
     @Test
     public void setLanguageToGreek() {
         InputStream input = new ByteArrayInputStream("2".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
         Language language = UI.setLanguage();
 
         assertTrue(language instanceof Greek);

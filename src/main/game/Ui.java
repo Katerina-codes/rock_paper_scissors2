@@ -7,4 +7,5 @@ public interface Ui {
     void announceWinnerTwo(Result playerOneWins);
     void askForLanguage();
     String getLanguage();
+    void setUserLanguage();
 }
