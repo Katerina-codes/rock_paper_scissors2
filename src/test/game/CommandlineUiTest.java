@@ -86,4 +86,13 @@ public class CommandlineUiTest {
 
         assertTrue(language instanceof English);
     }
+
+    @Test
+    public void setLanguageToGreek() {
+        InputStream input = new ByteArrayInputStream("2".getBytes());
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input, englishLanguage);
+        Language language = UI.setLanguage();
+
+        assertTrue(language instanceof Greek);
+    }
 }

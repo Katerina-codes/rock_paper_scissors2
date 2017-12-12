@@ -84,6 +84,8 @@ public class CommandlineUi implements Ui {
     }
 
     public Language setLanguage() {
-        return new English();
+        askForLanguage();
+        String userChoice = getLanguage();
+        return createLanguageOptions(userChoice);
     }
 }
