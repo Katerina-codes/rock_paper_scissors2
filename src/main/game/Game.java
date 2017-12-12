@@ -13,7 +13,7 @@ public class Game {
     }
 
     public void runGameTwo() {
-        inputOutput.setUserLanguage();
+        inputOutput.setLanguage();
         inputOutput.askForMoveTwo();
         Moves playerOneMove = inputOutput.getMove();
         inputOutput.askForMoveTwo();

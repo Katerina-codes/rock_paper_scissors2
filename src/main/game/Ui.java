@@ -15,5 +15,5 @@ public interface Ui {
 
     String getLanguage();
 
-    void setUserLanguage();
+    void setLanguage();
 }

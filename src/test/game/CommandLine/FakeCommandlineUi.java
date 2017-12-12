@@ -31,7 +31,7 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
-    public void setUserLanguage() {
+    public void setLanguage() {
         this.setUserLanguageWasCalled = true;
     }
 

@@ -80,25 +80,27 @@ public class CommandlineUiTest {
 
     @Test
     public void setLanguageToEnglish() {
-        CommandlineUi UI = commandLineWithInput("1");
-        Language language = UI.setLanguage();
+        CommandlineUi ui = commandLineWithInput("1");
+        ui.setLanguage();
+        ui.askForMoveTwo();
 
-        assertTrue(language instanceof English);
+        assertTrue(output.toString().contains("Pick a move"));
     }
 
     @Test
     public void setLanguageToGreek() {
-        CommandlineUi UI = commandLineWithInput("2");
-        Language language = UI.setLanguage();
+        CommandlineUi ui = commandLineWithInput("2");
+        ui.setLanguage();
+        ui.askForMoveTwo();
 
-        assertTrue(language instanceof Greek);
+        assertTrue(output.toString().contains("επιλέξτε την κίνηση"));
     }
 
     @Test
     public void translatesRock() {
-        CommandlineUi UI = commandLineWithInput("πέτρα");
+        CommandlineUi ui = commandLineWithInput("πέτρα");
 
-        assertEquals(Moves.ROCK, UI.getMove());
+        assertEquals(Moves.ROCK, ui.getMove());
     }
 
     private CommandlineUi commandLineWithInput(String userInput) {

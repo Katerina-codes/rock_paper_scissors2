@@ -70,10 +70,6 @@ public class CommandlineUi implements Ui {
         return userChoice;
     }
 
-    public void setUserLanguage() {
-        setLanguage();
-    }
-
     public Language createLanguageOptions(String userChoice) {
         if (userChoice.equals("1")) {
             return new English();
@@ -82,11 +78,10 @@ public class CommandlineUi implements Ui {
         }
     }
 
-    public Language setLanguage() {
+    public void setLanguage() {
         askForLanguage();
         String userChoice = getLanguage();
         this.language = createLanguageOptions(userChoice);
-        return this.language;
     }
 
     public void askForLanguage() {
