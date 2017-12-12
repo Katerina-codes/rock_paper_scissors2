@@ -11,21 +11,12 @@ public class CommandlineUi implements Ui {
     private HashMap<String, Moves> moves;
     private HashMap<Result, String> results;
 
-
-    public CommandlineUi(PrintStream output, InputStream input, Language language) {
-        this.output = output;
-        this.input = new BufferedReader(new InputStreamReader(input));
-        this.language = language;
-        createMoveOptions();
-        createResultOptions();
-    }
-
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
         createMoveOptions();
         createResultOptions();
-        language = setLanguage();
+        this.language = new English();
     }
 
     public void askForMoveTwo() {
@@ -99,6 +90,7 @@ public class CommandlineUi implements Ui {
     public Language setLanguage() {
         askForLanguage();
         String userChoice = getLanguage();
-        return createLanguageOptions(userChoice);
+        Language language = createLanguageOptions(userChoice);
+        return this.language = language;
     }
 }
