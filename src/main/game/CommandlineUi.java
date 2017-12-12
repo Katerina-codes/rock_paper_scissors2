@@ -82,4 +82,8 @@ public class CommandlineUi implements Ui {
             return new Greek();
         }
     }
+
+    public Language setLanguage() {
+        return new English();
+    }
 }
