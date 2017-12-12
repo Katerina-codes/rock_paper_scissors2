@@ -31,8 +31,7 @@ public class CommandlineUiTest {
     public void askForLanguage() {
         UI.askForLanguage();
 
-        assertTrue(output.toString().contains("Choose your language:" +
-                "Enter '1' for English\n" +
+        assertTrue(output.toString().contains("Enter '1' for English\n" +
                 "Eiságete '2' gia Ελληνικά"));
     }
 

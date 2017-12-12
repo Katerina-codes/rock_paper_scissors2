@@ -46,11 +46,6 @@ public class CommandlineUi implements Ui {
         output.println(language.announceWinner(convertedWinningMove));
     }
 
-    public void askForLanguage() {
-        English english = new English();
-        output.println(english.askForLanguage());
-    }
-
     public String getLanguage() {
         String userChoice = null;
         try {
@@ -63,20 +58,6 @@ public class CommandlineUi implements Ui {
 
     public void setUserLanguage() {
        setLanguage();
-    }
-
-    private void createMoveOptions() {
-        moves = new HashMap<>();
-        moves.put("rock", Moves.ROCK);
-        moves.put("paper", Moves.PAPER);
-        moves.put("scissors", Moves.SCISSORS);
-    }
-
-    private void createResultOptions() {
-        results = new HashMap<>();
-        results.put(Result.PLAYER_ONE_WINS, "Player One");
-        results.put(Result.PLAYER_TWO_WINS, "Player Two");
-        results.put(Result.DRAW, "It's a draw!");
     }
 
     public Language createLanguageOptions(String userChoice) {
@@ -93,4 +74,23 @@ public class CommandlineUi implements Ui {
         Language language = createLanguageOptions(userChoice);
         return this.language = language;
     }
+    public void askForLanguage() {
+        English english = new English();
+        output.println(english.askForLanguage());
+    }
+
+    private void createMoveOptions() {
+        moves = new HashMap<>();
+        moves.put("rock", Moves.ROCK);
+        moves.put("paper", Moves.PAPER);
+        moves.put("scissors", Moves.SCISSORS);
+    }
+
+    private void createResultOptions() {
+        results = new HashMap<>();
+        results.put(Result.PLAYER_ONE_WINS, "Player One");
+        results.put(Result.PLAYER_TWO_WINS, "Player Two");
+        results.put(Result.DRAW, "It's a draw!");
+    }
+
 }

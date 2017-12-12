@@ -3,11 +3,11 @@ package main.game;
 public class Greek implements Language {
 
     public String promptForMove() {
-        return null;
+        return "επιλέξτε την κίνηση σας πληκτρολογώντας 'πέτρα', 'χαρτί' ή 'ψαλίδι': ";
     }
 
     public String announceWinner(String convertedWinningMove) {
-        return null;
+        return (String.format("%s κερδίζει 🙌 ", convertedWinningMove));
     }
 
     public String askForLanguage() {
