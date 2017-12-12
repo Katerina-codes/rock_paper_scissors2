@@ -33,7 +33,7 @@ public class CommandlineUiTest {
 
         assertTrue(output.toString().contains("Choose your language:" +
                 "Enter '1' for English\n" +
-                "Eiságete dýo gia Ελληνικά"));
+                "Eiságete '2' gia Ελληνικά"));
     }
 
     @Test

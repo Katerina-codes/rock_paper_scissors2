@@ -20,6 +20,14 @@ public class CommandlineUi implements Ui {
         createResultOptions();
     }
 
+    public CommandlineUi(PrintStream output, InputStream input) {
+        this.output = output;
+        this.input = new BufferedReader(new InputStreamReader(input));
+        createMoveOptions();
+        createResultOptions();
+        language = setLanguage();
+    }
+
     public void askForMoveTwo() {
         output.println(language.promptForMove());
     }
@@ -48,7 +56,8 @@ public class CommandlineUi implements Ui {
     }
 
     public void askForLanguage() {
-        output.println(language.askForLanguage());
+        English english = new English();
+        output.println(english.askForLanguage());
     }
 
     public String getLanguage() {
@@ -59,6 +68,10 @@ public class CommandlineUi implements Ui {
             e.printStackTrace();
         }
         return userChoice;
+    }
+
+    public void setUserLanguage() {
+       setLanguage();
     }
 
     private void createMoveOptions() {
