@@ -16,6 +16,7 @@ public class CommandlineUiTest {
 
     private ByteArrayOutputStream output;
     private InputStream input;
+    private Language language;
     private English englishLanguage;
     private CommandlineUi UI;
 

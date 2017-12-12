@@ -107,4 +107,21 @@ public class CommandlineUi implements Ui {
         results.put(Result.DRAW, "It's a draw!");
     }
 
+<<<<<<< HEAD
+=======
+    public Language createLanguageOptions(String userChoice) {
+        if (userChoice.equals("1")) {
+            return new English();
+        } else {
+            return new Greek();
+        }
+    }
+
+    public Language setLanguage() {
+        askForLanguage();
+        String userChoice = getLanguage();
+        Language language = createLanguageOptions(userChoice);
+        return this.language = language;
+    }
+>>>>>>> 2a8269b519ee6ba5bf1fb4509520c1af786eedc9
 }
