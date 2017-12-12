@@ -78,8 +78,8 @@ public class CommandlineUi implements Ui {
     public Language setLanguage() {
         askForLanguage();
         String userChoice = getLanguage();
-        Language language = createLanguageOptions(userChoice);
-        return this.language = language;
+        this.language = createLanguageOptions(userChoice);
+        return this.language;
     }
     public void askForLanguage() {
         English english = new English();
