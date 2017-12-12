@@ -40,8 +40,7 @@ public class CommandlineUiTest {
 
     @Test
     public void getLanguage() {
-        InputStream input = new ByteArrayInputStream("1".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
+        CommandlineUi UI = commandLineWithInput("1");
 
         assertEquals("1", UI.getLanguage());
     }
@@ -55,8 +54,7 @@ public class CommandlineUiTest {
 
     @Test
     public void getMoveFromUser() {
-        InputStream input = new ByteArrayInputStream("rock".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
+        CommandlineUi UI = commandLineWithInput("rock");
 
         assertEquals(Moves.ROCK, UI.getMove());
     }
@@ -82,8 +80,7 @@ public class CommandlineUiTest {
 
     @Test
     public void setLanguageToEnglish() {
-        InputStream input = new ByteArrayInputStream("1".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
+        CommandlineUi UI = commandLineWithInput("1");
         Language language = UI.setLanguage();
 
         assertTrue(language instanceof English);
@@ -91,8 +88,7 @@ public class CommandlineUiTest {
 
     @Test
     public void setLanguageToGreek() {
-        InputStream input = new ByteArrayInputStream("2".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
+        CommandlineUi UI = commandLineWithInput("2");
         Language language = UI.setLanguage();
 
         assertTrue(language instanceof Greek);
@@ -100,9 +96,13 @@ public class CommandlineUiTest {
 
     @Test
     public void translatesRock() {
-        InputStream input = new ByteArrayInputStream("πέτρα".getBytes());
-        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
+        CommandlineUi UI = commandLineWithInput("πέτρα");
 
         assertEquals(Moves.ROCK, UI.getMove());
+    }
+
+    private CommandlineUi commandLineWithInput(String userInput) {
+        InputStream input = new ByteArrayInputStream(userInput.getBytes());
+        return new CommandlineUi(new PrintStream(output), input);
     }
 }
