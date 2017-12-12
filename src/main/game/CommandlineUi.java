@@ -10,12 +10,14 @@ public class CommandlineUi implements Ui {
     private Language language;
     private HashMap<String, Moves> moves;
     private HashMap<Result, String> results;
+    private HashMap<String, String> translations;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
         createMoveOptions();
         createResultOptions();
+        translateToEnglish();
         this.language = new English();
     }
 
@@ -30,7 +32,12 @@ public class CommandlineUi implements Ui {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return convertMove(userMove);
+        if (userMove.equals("rock") || userMove.equals("paper") || userMove.equals("scissors")) {
+            return convertMove(userMove);
+        } else {
+            String translatedMove = translations.get(userMove);
+            return convertMove(translatedMove);
+        }
     }
 
     public Moves convertMove(String userMove) {
@@ -77,6 +84,13 @@ public class CommandlineUi implements Ui {
     public void askForLanguage() {
         English english = new English();
         output.println(english.askForLanguage());
+    }
+
+    private void translateToEnglish() {
+       translations = new HashMap<>();
+       translations.put("πέτρα", "rock");
+       translations.put("χαρτί", "paper");
+       translations.put("ψαλίδι", "scissors");
     }
 
     private void createMoveOptions() {

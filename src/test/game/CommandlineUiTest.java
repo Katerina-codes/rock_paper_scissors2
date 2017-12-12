@@ -94,4 +94,12 @@ public class CommandlineUiTest {
 
         assertTrue(language instanceof Greek);
     }
+
+    @Test
+    public void translatesRock() {
+        InputStream input = new ByteArrayInputStream("πέτρα".getBytes());
+        CommandlineUi UI = new CommandlineUi(new PrintStream(output), input);
+
+        assertEquals(Moves.ROCK, UI.getMove());
+    }
 }
