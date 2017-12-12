@@ -64,7 +64,7 @@ public class CommandlineUi implements Ui {
     }
 
     public void setUserLanguage() {
-       setLanguage();
+        setLanguage();
     }
 
     public Language createLanguageOptions(String userChoice) {
@@ -81,16 +81,17 @@ public class CommandlineUi implements Ui {
         this.language = createLanguageOptions(userChoice);
         return this.language;
     }
+
     public void askForLanguage() {
         English english = new English();
         output.println(english.askForLanguage());
     }
 
     private void translateToEnglish() {
-       translations = new HashMap<>();
-       translations.put("πέτρα", "rock");
-       translations.put("χαρτί", "paper");
-       translations.put("ψαλίδι", "scissors");
+        translations = new HashMap<>();
+        translations.put("πέτρα", "rock");
+        translations.put("χαρτί", "paper");
+        translations.put("ψαλίδι", "scissors");
     }
 
     private void createMoveOptions() {

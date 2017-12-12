@@ -11,6 +11,6 @@ public class English implements Language {
 
     public String askForLanguage() {
         return "Enter '1' for English\n" +
-                "Eiságete '2' gia Ελληνικά";
+                "Eισάγετε '2' για Ελληνικά";
     }
 }

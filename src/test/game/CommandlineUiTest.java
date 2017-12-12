@@ -33,7 +33,7 @@ public class CommandlineUiTest {
         UI.askForLanguage();
 
         assertTrue(output.toString().contains("Enter '1' for English\n" +
-                "Eiságete '2' gia Ελληνικά"));
+                "Eισάγετε '2' για Ελληνικά"));
     }
 
     @Test
