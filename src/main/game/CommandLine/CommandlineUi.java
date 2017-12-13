@@ -88,6 +88,16 @@ public class CommandlineUi implements Ui {
         output.println(language.promptForGameMode());
     }
 
+    public String getGameMode() {
+        String gameMode = null;
+        try {
+            return gameMode = input.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return gameMode;
+    }
+
     public void askForLanguage() {
         English english = new English();
         output.println(english.askForLanguage());
