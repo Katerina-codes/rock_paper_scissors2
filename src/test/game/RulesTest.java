@@ -1,13 +1,18 @@
 package test.game;
 
-import main.game.*;
+import main.game.Moves.Move;
+import main.game.Moves.Paper;
+import main.game.Moves.Rock;
+import main.game.Moves.Scissors;
+import main.game.Result;
+import main.game.Rules;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static main.game.Moves.*;
+import static main.game.Moves.Moves.*;
 import static main.game.Result.DRAW;
 import static org.junit.Assert.assertEquals;
 
@@ -25,36 +30,50 @@ public class RulesTest {
         moves.put(PAPER, paperMove);
         moves.put(SCISSORS, scissorsMove);
     }
-    
+
     @Test
     public void scoresADraw() {
 
         Rules rules = new Rules(moves);
 
-        assertEquals(DRAW.getResult(), rules.scoreGameTwo(ROCK, ROCK));
+        assertEquals(DRAW, rules.findWinningPLayer(ROCK, ROCK));
     }
 
     @Test
     public void scoresAWinForRockAgainstScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(ROCK.getMove(), rules.scoreGameTwo(ROCK, SCISSORS));
-        assertEquals(ROCK.getMove(), rules.scoreGameTwo(SCISSORS, ROCK));
+        assertEquals(ROCK, rules.scoreMove(ROCK, SCISSORS));
+        assertEquals(ROCK, rules.scoreMove(SCISSORS, ROCK));
     }
 
     @Test
     public void scoresLossForRockAgainstPaper() {
         Rules rules = new Rules(moves);
 
-        assertEquals(PAPER.getMove(), rules.scoreGameTwo(ROCK, PAPER));
-        assertEquals(PAPER.getMove(), rules.scoreGameTwo(PAPER, ROCK));
+        assertEquals(PAPER, rules.scoreMove(ROCK, PAPER));
+        assertEquals(PAPER, rules.scoreMove(PAPER, ROCK));
     }
 
     @Test
     public void scoresLossForPaperAgainstScissors() {
         Rules rules = new Rules(moves);
 
-        assertEquals(SCISSORS.getMove(), rules.scoreGameTwo(SCISSORS, PAPER));
-        assertEquals(SCISSORS.getMove(), rules.scoreGameTwo(PAPER, SCISSORS));
+        assertEquals(SCISSORS, rules.scoreMove(SCISSORS, PAPER));
+        assertEquals(SCISSORS, rules.scoreMove(PAPER, SCISSORS));
+    }
+
+    @Test
+    public void playerOneWinsWhenPlayerOneIsScissorsAndWinningMoveIsScissors() {
+        Rules rules = new Rules(moves);
+
+        assertEquals(Result.PLAYER_ONE_WINS, rules.scoreGame(SCISSORS, SCISSORS));
+    }
+
+    @Test
+    public void playerOneWinsWhenPlayerTwoIsScissorsAndWinningMoveIsScissors() {
+        Rules rules = new Rules(moves);
+
+        assertEquals(Result.PLAYER_TWO_WINS, rules.scoreGame(PAPER, SCISSORS));
     }
 }
