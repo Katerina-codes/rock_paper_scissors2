@@ -14,4 +14,8 @@ public class Greek implements Language {
     }
         return (String.format("%s κερδίζει!", convertedWinningMove));
     }
+
+    public String promptForGameMode() {
+        return "Eisagágete '1' gia Anthrópina enantíon Anthrópou\nEisagágete '2' gia Anthrópino enantíon ypologistí";
+    }
 }

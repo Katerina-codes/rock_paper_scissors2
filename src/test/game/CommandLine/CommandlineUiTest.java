@@ -103,6 +103,15 @@ public class CommandlineUiTest {
         assertEquals(Moves.ROCK, ui.getMove());
     }
 
+    @Test
+    public void promptsUserForGameMode() {
+        CommandlineUi ui = commandLineWithInput("1");
+        ui.setLanguage();
+        ui.promptForGameMode();
+
+        assertTrue(output.toString().contains("Enter '1' for Human vs. Human\nEnter '2' for Human vs. Computer"));
+    }
+
     private CommandlineUi commandLineWithInput(String userInput) {
         InputStream input = new ByteArrayInputStream(userInput.getBytes());
         return new CommandlineUi(new PrintStream(output), input);

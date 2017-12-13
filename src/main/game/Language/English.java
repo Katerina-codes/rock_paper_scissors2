@@ -9,6 +9,10 @@ public class English implements Language {
         return (String.format("%s wins!", convertedWinningMove));
     }
 
+    public String promptForGameMode() {
+        return "Enter '1' for Human vs. Human\nEnter '2' for Human vs. Computer";
+    }
+
     public String askForLanguage() {
         return "Enter '1' for English\n" +
                 "Eισάγετε '2' για Ελληνικά";

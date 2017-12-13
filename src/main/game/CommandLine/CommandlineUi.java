@@ -84,6 +84,10 @@ public class CommandlineUi implements Ui {
         this.language = createLanguageOptions(userChoice);
     }
 
+    public void promptForGameMode() {
+        output.println(language.promptForGameMode());
+    }
+
     public void askForLanguage() {
         English english = new English();
         output.println(english.askForLanguage());

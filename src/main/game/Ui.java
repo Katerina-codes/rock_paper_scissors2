@@ -16,4 +16,6 @@ public interface Ui {
     String getLanguage();
 
     void setLanguage();
+
+    void promptForGameMode();
 }
