@@ -15,6 +15,7 @@ public class Game {
     public void runGameTwo() {
         inputOutput.setLanguage();
         inputOutput.promptForGameMode();
+        inputOutput.getGameMode();
         inputOutput.askForMoveTwo();
         Moves playerOneMove = inputOutput.getMove();
         inputOutput.askForMoveTwo();

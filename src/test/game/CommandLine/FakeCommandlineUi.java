@@ -54,7 +54,7 @@ public class FakeCommandlineUi implements Ui {
         return promptForGameModeWasCalled;
     }
 
-    public boolean isGetGameModeWasCalled() {
+    public boolean getGameModeWasCalled() {
         return getGameModeWasCalled;
     }
 
