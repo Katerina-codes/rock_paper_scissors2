@@ -93,7 +93,7 @@ public class CommandlineUiTest {
         ui.setLanguage();
         ui.askForMoveTwo();
 
-        assertTrue(output.toString().contains("επιλέξτε την κίνηση"));
+        assertTrue(output.toString().contains("Eπιλέξτε την κίνηση"));
     }
 
     @Test
