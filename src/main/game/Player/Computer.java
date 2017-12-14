@@ -4,7 +4,7 @@ import main.game.Moves.Moves;
 
 public class Computer {
 
-    public Moves playMove() {
+    public static Moves playMove() {
        return Moves.getRandomMove();
     }
 }
