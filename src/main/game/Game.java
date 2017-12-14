@@ -17,16 +17,15 @@ public class Game {
         inputOutput.setLanguage();
         String gameMode = setGameMode();
         Moves playerOneMove = getPlayerMove();
+        Moves playerTwoMove;
 
         if (gameMode.equals("1")) {
-            Moves playerTwoMove = getPlayerMove();
-            Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
-            inputOutput.announceWinner(winningMove);
+            playerTwoMove = getPlayerMove();
         } else {
-            Moves playerTwoMove = Computer.playMove();
-            Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
-            inputOutput.announceWinner(winningMove);
+            playerTwoMove = Computer.playMove();
         }
+        Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
+        inputOutput.announceWinner(winningMove);
     }
 
     private Moves getPlayerMove() {
