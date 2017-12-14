@@ -17,6 +17,12 @@ public class Game {
         inputOutput.setLanguage();
         String gameMode = setGameMode();
         Moves playerOneMove = getPlayerMove();
+        Moves playerTwoMove = getPlayerTwoMove(gameMode);
+        Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
+        inputOutput.announceWinner(winningMove);
+    }
+
+    private Moves getPlayerTwoMove(String gameMode) {
         Moves playerTwoMove;
 
         if (gameMode.equals("1")) {
@@ -24,8 +30,7 @@ public class Game {
         } else {
             playerTwoMove = Computer.playMove();
         }
-        Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
-        inputOutput.announceWinner(winningMove);
+        return playerTwoMove;
     }
 
     private Moves getPlayerMove() {
