@@ -7,9 +7,9 @@ public interface Ui {
 
     Moves convertMove(String playerOneMove);
 
-    void askForMoveTwo();
+    void askForMove();
 
-    void announceWinnerTwo(Result playerOneWins);
+    void announceWinner(Result playerOneWins);
 
     void askForLanguage();
 

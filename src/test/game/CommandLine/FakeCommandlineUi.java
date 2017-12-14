@@ -22,7 +22,7 @@ public class FakeCommandlineUi implements Ui {
         return Moves.ROCK;
     }
 
-    public void announceWinnerTwo(Result playerOneWins) {
+    public void announceWinner(Result playerOneWins) {
         this.announceWinnerTwoWasCalled = true;
     }
 
@@ -46,7 +46,7 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
-    public void askForMoveTwo() {
+    public void askForMove() {
         this.askForMoveTwoWasCalled = true;
     }
 

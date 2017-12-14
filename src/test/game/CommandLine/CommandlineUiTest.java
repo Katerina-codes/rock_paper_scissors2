@@ -47,7 +47,7 @@ public class CommandlineUiTest {
 
     @Test
     public void asksUserToEnterMove() {
-        ui.askForMoveTwo();
+        ui.askForMove();
 
         assertTrue(output.toString().contains("Pick a move. Enter 'rock', 'paper' or 'scissors': "));
     }
@@ -61,7 +61,7 @@ public class CommandlineUiTest {
 
     @Test
     public void announcesWinner() {
-        ui.announceWinnerTwo(Result.PLAYER_ONE_WINS);
+        ui.announceWinner(Result.PLAYER_ONE_WINS);
 
         assertTrue(output.toString().contains("Player One"));
     }
@@ -82,7 +82,7 @@ public class CommandlineUiTest {
     public void setLanguageToEnglish() {
         CommandlineUi ui = commandLineWithInput("1");
         ui.setLanguage();
-        ui.askForMoveTwo();
+        ui.askForMove();
 
         assertTrue(output.toString().contains("Pick a move"));
     }
@@ -91,7 +91,7 @@ public class CommandlineUiTest {
     public void setLanguageToGreek() {
         CommandlineUi ui = commandLineWithInput("2");
         ui.setLanguage();
-        ui.askForMoveTwo();
+        ui.askForMove();
 
         assertTrue(output.toString().contains("Eπιλέξτε την κίνηση"));
     }

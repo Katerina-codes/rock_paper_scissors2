@@ -13,22 +13,22 @@ public class Game {
         this.rules = rules;
     }
 
-    public void runGameTwo() {
+    public void runGame() {
         inputOutput.setLanguage();
         inputOutput.promptForGameMode();
         String gameMode = inputOutput.getGameMode();
-        inputOutput.askForMoveTwo();
+        inputOutput.askForMove();
         Moves playerOneMove = inputOutput.getMove();
 
         if (gameMode.equals("1")) {
-            inputOutput.askForMoveTwo();
+            inputOutput.askForMove();
             Moves playerTwoMove = inputOutput.getMove();
             Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
-            inputOutput.announceWinnerTwo(winningMove);
+            inputOutput.announceWinner(winningMove);
         } else {
             Moves playerTwoMove = Computer.playMove();
             Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
-            inputOutput.announceWinnerTwo(winningMove);
+            inputOutput.announceWinner(winningMove);
         }
     }
 }

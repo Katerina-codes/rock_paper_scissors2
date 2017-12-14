@@ -28,7 +28,7 @@ public class CommandlineUi implements Ui {
         this.language = new English();
     }
 
-    public void askForMoveTwo() {
+    public void askForMove() {
         output.println(language.promptForMove());
     }
 
@@ -55,7 +55,7 @@ public class CommandlineUi implements Ui {
         return results.get(winningMove);
     }
 
-    public void announceWinnerTwo(Result winningMove) {
+    public void announceWinner(Result winningMove) {
         String convertedWinningMove = convertWinningMove(winningMove);
         output.println(language.announceWinner(convertedWinningMove));
     }

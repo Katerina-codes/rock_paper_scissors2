@@ -37,7 +37,7 @@ public class GameTest {
         Rules rules = new Rules(moves);
         Game game = new Game(inputOutput, rules);
 
-        game.runGameTwo();
+        game.runGame();
 
         assertTrue(inputOutput.promptForGameModeWasCalled());
         assertTrue(inputOutput.getGameModeWasCalled());

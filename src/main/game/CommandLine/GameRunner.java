@@ -10,6 +10,6 @@ public class GameRunner {
         MoveFactory moves = new MoveFactory();
         Rules rules = new Rules(moves.getMoves());
         Game game = new Game(inputOutput, rules);
-        game.runGameTwo();
+        game.runGame();
     }
 }
