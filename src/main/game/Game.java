@@ -27,7 +27,6 @@ public class Game {
             inputOutput.announceWinnerTwo(winningMove);
         } else {
             Moves playerTwoMove = Computer.playMove();
-            System.out.println(playerTwoMove);
             Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
             inputOutput.announceWinnerTwo(winningMove);
         }
