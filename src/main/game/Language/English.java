@@ -6,7 +6,11 @@ public class English implements Language {
     }
 
     public String announceWinner(String convertedWinningMove) {
-        return (String.format("%s wins!", convertedWinningMove));
+        if (convertedWinningMove.contains("draw")) {
+            return "It's a draw!";
+        } else {
+            return (String.format("%s wins!", convertedWinningMove));
+        }
     }
 
     public String promptForGameMode() {
