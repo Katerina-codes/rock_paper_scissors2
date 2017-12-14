@@ -15,14 +15,11 @@ public class Game {
 
     public void runGame() {
         inputOutput.setLanguage();
-        inputOutput.promptForGameMode();
-        String gameMode = inputOutput.getGameMode();
-        inputOutput.askForMove();
-        Moves playerOneMove = inputOutput.getMove();
+        String gameMode = setGameMode();
+        Moves playerOneMove = getPlayerMove();
 
         if (gameMode.equals("1")) {
-            inputOutput.askForMove();
-            Moves playerTwoMove = inputOutput.getMove();
+            Moves playerTwoMove = getPlayerMove();
             Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
             inputOutput.announceWinner(winningMove);
         } else {
@@ -30,5 +27,15 @@ public class Game {
             Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
             inputOutput.announceWinner(winningMove);
         }
+    }
+
+    private Moves getPlayerMove() {
+        inputOutput.askForMove();
+        return inputOutput.getMove();
+    }
+
+    private String setGameMode() {
+        inputOutput.promptForGameMode();
+        return inputOutput.getGameMode();
     }
 }
