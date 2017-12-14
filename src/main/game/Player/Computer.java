@@ -5,6 +5,6 @@ import main.game.Moves.Moves;
 public class Computer {
 
     public static Moves playMove() {
-       return Moves.getRandomMove();
+        return Moves.getRandomMove();
     }
 }

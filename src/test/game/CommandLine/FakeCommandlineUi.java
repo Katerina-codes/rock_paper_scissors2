@@ -38,7 +38,7 @@ public class FakeCommandlineUi implements Ui {
     }
 
     public void promptForGameMode() {
-      this.promptForGameModeWasCalled = true;
+        this.promptForGameModeWasCalled = true;
     }
 
     public String getGameMode() {
