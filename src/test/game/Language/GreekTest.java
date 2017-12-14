@@ -28,4 +28,11 @@ public class GreekTest {
 
         assertTrue(greekLanguage.announceWinner("Player Two").contains("Paíktis dýo κερδίζει"));
     }
+
+    @Test
+    public void announcesDraw() {
+        Greek greekLanguage = new Greek();
+
+        assertTrue(greekLanguage.announceWinner("It's a draw!").contains("Είναι ισοπαλία!"));
+    }
 }

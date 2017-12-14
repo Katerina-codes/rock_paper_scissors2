@@ -10,6 +10,8 @@ public class FakeCommandlineUi implements Ui {
     private boolean announceWinnerTwoWasCalled = false;
     private boolean askForMoveTwoWasCalled = false;
     private boolean setUserLanguageWasCalled = false;
+    private boolean promptForGameModeWasCalled = false;
+    private boolean getGameModeWasCalled = false;
 
     public Moves getMove() {
         getsMoveFromUserWasCalled = true;
@@ -35,8 +37,25 @@ public class FakeCommandlineUi implements Ui {
         this.setUserLanguageWasCalled = true;
     }
 
+    public void promptForGameMode() {
+      this.promptForGameModeWasCalled = true;
+    }
+
+    public String getGameMode() {
+        this.getGameModeWasCalled = true;
+        return "1";
+    }
+
     public void askForMoveTwo() {
         this.askForMoveTwoWasCalled = true;
+    }
+
+    public boolean promptForGameModeWasCalled() {
+        return promptForGameModeWasCalled;
+    }
+
+    public boolean getGameModeWasCalled() {
+        return getGameModeWasCalled;
     }
 
     public boolean setUserLanguageWasCalled() {

@@ -28,4 +28,11 @@ public class EnglishTest {
 
         assertTrue(english.askForLanguage().contains("Enter '1' for English"));
     }
+
+    @Test
+    public void drawIsScoredCorrectly() {
+        English english = new English();
+
+        assertEquals("It's a draw!", english.announceWinner("It's a draw"));
+    }
 }
