@@ -125,6 +125,12 @@ public class CommandlineUi implements Ui {
     }
 
     public Moves getMoveTwo(String gameMode) {
-        return Moves.ROCK;
+        String move = null;
+        try {
+            move = input.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return convertMove(move);
     }
 }

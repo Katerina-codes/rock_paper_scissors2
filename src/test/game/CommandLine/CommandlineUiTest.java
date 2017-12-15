@@ -67,6 +67,13 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void getsPaperFromUser() {
+        CommandlineUi UI = commandLineWithInput("paper");
+
+        assertEquals(Moves.PAPER, UI.getMoveTwo("1"));
+    }
+    
+    @Test
     public void announcesWinner() {
         ui.announceWinner(Result.PLAYER_ONE_WINS);
 
