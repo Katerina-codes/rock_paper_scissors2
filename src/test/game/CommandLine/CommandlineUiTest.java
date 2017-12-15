@@ -13,6 +13,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -72,7 +73,16 @@ public class CommandlineUiTest {
 
         assertEquals(Moves.PAPER, UI.getMoveTwo("1"));
     }
-    
+
+    @Test
+    public void getsMoveFromComputer() {
+        CommandlineUi UI = commandLineWithInput("");
+        Moves[] moves = Moves.values();
+        Moves move = UI.getMoveTwo("2");
+
+        assertTrue(Arrays.asList(move).contains(UI.getMoveTwo("2")));
+    }
+
     @Test
     public void announcesWinner() {
         ui.announceWinner(Result.PLAYER_ONE_WINS);

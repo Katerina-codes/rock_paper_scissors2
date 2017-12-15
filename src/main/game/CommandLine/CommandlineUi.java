@@ -4,6 +4,7 @@ import main.game.Language.English;
 import main.game.Language.Greek;
 import main.game.Language.Language;
 import main.game.Moves.Moves;
+import main.game.Player.Computer;
 import main.game.Result;
 import main.game.Ui;
 
@@ -125,12 +126,16 @@ public class CommandlineUi implements Ui {
     }
 
     public Moves getMoveTwo(String gameMode) {
-        String move = null;
+        Moves move = null;
+        if (gameMode.equals("2")) {
+            move = Computer.playMove();
+        }
         try {
-            move = input.readLine();
+            String userMove = input.readLine();
+            move = convertMove(userMove);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return convertMove(move);
+        return move;
     }
 }
