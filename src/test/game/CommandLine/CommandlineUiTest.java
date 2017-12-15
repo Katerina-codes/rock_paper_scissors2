@@ -60,6 +60,13 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void getsRockFromUser() {
+        CommandlineUi UI = commandLineWithInput("rock");
+
+        assertEquals(Moves.ROCK, UI.getMoveTwo("1"));
+    }
+
+    @Test
     public void announcesWinner() {
         ui.announceWinner(Result.PLAYER_ONE_WINS);
 
