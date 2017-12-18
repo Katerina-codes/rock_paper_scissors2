@@ -20,4 +20,6 @@ public interface Ui {
     void promptForGameMode();
 
     String getGameMode();
+
+    Moves getMoveTwo(String gameMode);
 }

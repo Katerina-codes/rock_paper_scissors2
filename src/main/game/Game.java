@@ -13,7 +13,7 @@ public class Game {
         this.rules = rules;
     }
 
-    public void runGame() {
+    public void runGameTwo() {
         inputOutput.setLanguage();
         String gameMode = setGameMode();
         Moves playerOneMove = getPlayerMove();
@@ -21,7 +21,6 @@ public class Game {
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
     }
-
     private Moves getPlayerTwoMove(String gameMode) {
         Moves playerTwoMove;
 
@@ -36,6 +35,11 @@ public class Game {
     private Moves getPlayerMove() {
         inputOutput.askForMove();
         return inputOutput.getMove();
+    }
+
+    private Moves getPlayerMove(String gameMode) {
+        inputOutput.askForMove();
+        return inputOutput.getMoveTwo(gameMode);
     }
 
     private String setGameMode() {

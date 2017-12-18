@@ -6,15 +6,14 @@ import main.game.Ui;
 
 public class FakeCommandlineUi implements Ui {
 
-    private boolean getsMoveFromUserWasCalled = false;
     private boolean announceWinnerTwoWasCalled = false;
     private boolean askForMoveTwoWasCalled = false;
     private boolean setUserLanguageWasCalled = false;
     private boolean promptForGameModeWasCalled = false;
     private boolean getGameModeWasCalled = false;
+    private boolean getMoveTwoWasCalled = false;
 
     public Moves getMove() {
-        getsMoveFromUserWasCalled = true;
         return Moves.ROCK;
     }
 
@@ -46,6 +45,11 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
+    public Moves getMoveTwo(String gameMode) {
+        getMoveTwoWasCalled = true;
+        return Moves.ROCK;
+    }
+
     public void askForMove() {
         this.askForMoveTwoWasCalled = true;
     }
@@ -62,10 +66,9 @@ public class FakeCommandlineUi implements Ui {
         return setUserLanguageWasCalled;
     }
 
-    public boolean getsMoveFromUserWasCalled() {
-        return getsMoveFromUserWasCalled;
+    public boolean getMoveTwoWasCalled() {
+        return getMoveTwoWasCalled;
     }
-
     public boolean announceWinnerTwoWasCalled() {
         return announceWinnerTwoWasCalled;
     }

@@ -37,13 +37,13 @@ public class GameTest {
         Rules rules = new Rules(moves);
         Game game = new Game(inputOutput, rules);
 
-        game.runGame();
+        game.runGameTwo();
 
         assertTrue(inputOutput.promptForGameModeWasCalled());
         assertTrue(inputOutput.getGameModeWasCalled());
         assertTrue(inputOutput.setUserLanguageWasCalled());
         assertTrue(inputOutput.askForMoveTwoWasCalled());
-        assertTrue(inputOutput.getsMoveFromUserWasCalled());
+        assertTrue(inputOutput.getMoveTwoWasCalled());
         assertTrue(inputOutput.announceWinnerTwoWasCalled());
     }
 }

@@ -92,7 +92,7 @@ public class CommandlineUi implements Ui {
     public String getGameMode() {
         String gameMode = null;
         try {
-            return gameMode = input.readLine();
+            return input.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -126,16 +126,24 @@ public class CommandlineUi implements Ui {
     }
 
     public Moves getMoveTwo(String gameMode) {
-        Moves move = null;
+        String humanMove = null;
+        Moves convertedMove;
         if (gameMode.equals("2")) {
-            move = Computer.playMove();
+            convertedMove = Computer.playMove();
+        } else {
+            try {
+                humanMove = input.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (language instanceof Greek) {
+                String translatedMove = translations.get(humanMove);
+                convertedMove = convertMove(translatedMove);
+            } else {
+                convertedMove = convertMove(humanMove);
+            }
         }
-        try {
-            String userMove = input.readLine();
-            move = convertMove(userMove);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return move;
+        return convertedMove;
     }
 }
