@@ -40,7 +40,7 @@ public class CommandlineUi implements Ui {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (userMove.equals("rock") || userMove.equals("paper") || userMove.equals("scissors")) {
+        if (language instanceof English) {
             return convertMove(userMove);
         } else {
             String translatedMove = translations.get(userMove);
