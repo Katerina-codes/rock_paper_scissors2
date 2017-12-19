@@ -132,6 +132,7 @@ public class CommandlineUi implements Ui {
             convertedMove = Computer.playMove();
         } else {
             try {
+                askForMove();
                 humanMove = input.readLine();
             } catch (IOException e) {
                 e.printStackTrace();

@@ -21,7 +21,6 @@ public class Game {
         inputOutput.announceWinner(winningMove);
     }
     private Moves getPlayerTwoMove(String gameMode) {
-        inputOutput.askForMove();
         return inputOutput.getMoveTwo(gameMode);
     }
 
