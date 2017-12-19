@@ -40,12 +40,7 @@ public class CommandlineUi implements Ui {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (language instanceof English) {
-            return convertMove(userMove);
-        } else {
-            String translatedMove = translations.get(userMove);
-            return convertMove(translatedMove);
-        }
+        return getConvertedMove(userMove);
     }
 
     public Moves convertMove(String userMove) {
@@ -104,6 +99,23 @@ public class CommandlineUi implements Ui {
         output.println(english.askForLanguage());
     }
 
+    private String getTranslatedMove(String userMove) {
+        return translations.get(userMove);
+    }
+
+    private boolean languageIsEnglish() {
+        return language instanceof English;
+    }
+
+    private Moves getConvertedMove(String userMove) {
+        if (languageIsEnglish()) {
+            return convertMove(userMove);
+        } else {
+            String translatedMove = getTranslatedMove(userMove);
+            return convertMove(translatedMove);
+        }
+    }
+
     private void translateToEnglish() {
         translations = new HashMap<>();
         translations.put("πέτρα", "rock");
@@ -139,7 +151,7 @@ public class CommandlineUi implements Ui {
             }
 
             if (language instanceof Greek) {
-                String translatedMove = translations.get(humanMove);
+                String translatedMove = getTranslatedMove(humanMove);
                 convertedMove = convertMove(translatedMove);
             } else {
                 convertedMove = convertMove(humanMove);
