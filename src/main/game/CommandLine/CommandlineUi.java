@@ -43,6 +43,29 @@ public class CommandlineUi implements Ui {
         return getConvertedMove(userMove);
     }
 
+    public Moves getMoveTwo(String gameMode) {
+        String humanMove = null;
+        Moves convertedMove;
+        if (gameMode.equals("2")) {
+            convertedMove = Computer.playMove();
+        } else {
+            try {
+                askForMove();
+                humanMove = input.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if (language instanceof Greek) {
+                String translatedMove = getTranslatedMove(humanMove);
+                convertedMove = convertMove(translatedMove);
+            } else {
+                convertedMove = convertMove(humanMove);
+            }
+        }
+        return convertedMove;
+    }
+
     public Moves convertMove(String userMove) {
         return moves.get(userMove);
     }
@@ -135,28 +158,5 @@ public class CommandlineUi implements Ui {
         results.put(Result.PLAYER_ONE_WINS, "Player One");
         results.put(Result.PLAYER_TWO_WINS, "Player Two");
         results.put(Result.DRAW, "It's a draw!");
-    }
-
-    public Moves getMoveTwo(String gameMode) {
-        String humanMove = null;
-        Moves convertedMove;
-        if (gameMode.equals("2")) {
-            convertedMove = Computer.playMove();
-        } else {
-            try {
-                askForMove();
-                humanMove = input.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            if (language instanceof Greek) {
-                String translatedMove = getTranslatedMove(humanMove);
-                convertedMove = convertMove(translatedMove);
-            } else {
-                convertedMove = convertMove(humanMove);
-            }
-        }
-        return convertedMove;
     }
 }
