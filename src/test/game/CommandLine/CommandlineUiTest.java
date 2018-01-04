@@ -93,6 +93,11 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void translateGreekMoveToEnglish() {
+        assertEquals("rock", ui.translateMove("πέτρα"));
+    }
+
+    @Test
     public void announcesWinner() {
         ui.announceWinner(Result.PLAYER_ONE_WINS);
 
