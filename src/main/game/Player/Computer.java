@@ -10,7 +10,7 @@ public class Computer {
         return Moves.getRandomMove();
     }
 
-    public String playMoveTwo() {
+    public static String playMoveTwo() {
         String[] moves = {"rock", "paper", "scissors"};
         Random random = new Random();
         int randomMove = random.nextInt(moves.length);

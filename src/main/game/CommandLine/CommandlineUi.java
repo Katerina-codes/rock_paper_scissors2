@@ -66,6 +66,10 @@ public class CommandlineUi implements Ui {
         return convertedMove;
     }
 
+    public String getMoveThree() {
+        return Computer.playMoveTwo();
+    }
+
     public Moves convertMove(String userMove) {
         return moves.get(userMove);
     }

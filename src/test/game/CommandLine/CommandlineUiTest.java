@@ -69,9 +69,18 @@ public class CommandlineUiTest {
 
     @Test
     public void getsMoveFromComputer() {
-        CommandlineUi UI = commandLineWithInput("1");
+        CommandlineUi UI = commandLineWithInput("");
         Moves[] moves = Moves.values();
         Moves move = UI.getMoveTwo("2");
+
+        assertTrue(Arrays.asList(moves).contains(move));
+    }
+
+    @Test
+    public void getMoveFromComputerAsString() {
+        CommandlineUi UI = commandLineWithInput("1");
+        String[] moves = { "rock", "paper", "scissors" };
+        String move = UI.getMoveThree();
 
         assertTrue(Arrays.asList(moves).contains(move));
     }
