@@ -66,8 +66,18 @@ public class CommandlineUi implements Ui {
         return convertedMove;
     }
 
-    public String getMoveThree() {
-        return Computer.playMoveTwo();
+    public String getMoveThree(String gameMode) {
+        String move = null;
+        if (gameMode.equals("1")) {
+            try {
+                move = input.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            move = Computer.playMoveTwo();
+        }
+        return move;
     }
 
     public Moves convertMove(String userMove) {
