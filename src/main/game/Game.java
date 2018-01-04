@@ -12,7 +12,7 @@ public class Game {
         this.rules = rules;
     }
 
-    public void runGameTwo() {
+    public void runGame() {
         inputOutput.setLanguage();
         String gameMode = setGameMode();
         Moves playerOneMove = getPlayerMove();
