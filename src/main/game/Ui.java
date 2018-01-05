@@ -21,5 +21,5 @@ public interface Ui {
 
     String getGameMode();
 
-    Moves getMoveTwo(String gameMode);
+    Moves getMoveThree(String gameMode);
 }

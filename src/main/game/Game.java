@@ -15,18 +15,15 @@ public class Game {
     public void runGame() {
         inputOutput.setLanguage();
         String gameMode = setGameMode();
-        Moves playerOneMove = getPlayerMove();
-        Moves playerTwoMove = getPlayerTwoMove(gameMode);
+        Moves playerOneMove = getPlayerMove(gameMode);
+        Moves playerTwoMove = getPlayerMove(gameMode);
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
     }
-    private Moves getPlayerTwoMove(String gameMode) {
-        return inputOutput.getMoveTwo(gameMode);
-    }
 
-    private Moves getPlayerMove() {
+    private Moves getPlayerMove(String gameMode) {
         inputOutput.askForMove();
-        return inputOutput.getMove();
+        return inputOutput.getMoveThree(gameMode);
     }
 
     private String setGameMode() {

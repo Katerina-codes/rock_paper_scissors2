@@ -43,29 +43,6 @@ public class CommandlineUi implements Ui {
         return getConvertedMove(userMove);
     }
 
-    public Moves getMoveTwo(String gameMode) {
-        String humanMove = null;
-        Moves convertedMove;
-        if (gameMode.equals("2")) {
-            convertedMove = Computer.playMove();
-        } else {
-            try {
-                askForMove();
-                humanMove = input.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            if (language instanceof Greek) {
-                String translatedMove = getTranslatedMove(humanMove);
-                convertedMove = convertMove(translatedMove);
-            } else {
-                convertedMove = convertMove(humanMove);
-            }
-        }
-        return convertedMove;
-    }
-
     public Moves getMoveThree(String gameMode) {
         String move = null;
         if (gameMode.equals("1")) {

@@ -58,21 +58,21 @@ public class CommandlineUiTest {
     public void getsRockFromUser() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMoveTwo("1"));
+        assertEquals(ROCK, UI.getMoveThree("1"));
     }
 
     @Test
     public void getsPaperFromUser() {
         CommandlineUi UI = commandLineWithInput("paper");
 
-        assertEquals(Moves.PAPER, UI.getMoveTwo("1"));
+        assertEquals(Moves.PAPER, UI.getMoveThree("1"));
     }
 
     @Test
     public void getsMoveFromComputer() {
         CommandlineUi UI = commandLineWithInput("");
         Moves[] moves = Moves.values();
-        Moves move = UI.getMoveTwo("2");
+        Moves move = UI.getMoveThree("2");
 
         assertTrue(Arrays.asList(moves).contains(move));
     }
@@ -142,7 +142,7 @@ public class CommandlineUiTest {
         CommandlineUi ui = commandLineWithInput("2\nπέτρα");
         ui.setLanguage();
 
-        assertEquals(ROCK, ui.getMoveTwo("1"));
+        assertEquals(ROCK, ui.getMoveThree("1"));
     }
 
     @Test
