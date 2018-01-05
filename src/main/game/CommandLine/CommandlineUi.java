@@ -18,29 +18,17 @@ public class CommandlineUi implements Ui {
     private Language language;
     private HashMap<String, Moves> moves;
     private HashMap<Result, String> results;
-    private HashMap<String, String> translations;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
         createMoveOptions();
         createResultOptions();
-        translateToEnglish();
         this.language = new English();
     }
 
     public void askForMove() {
         output.println(language.promptForMove());
-    }
-
-    public Moves getMove() {
-        String userMove = null;
-        try {
-            userMove = input.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return getConvertedMove(userMove);
     }
 
     public Moves getMoveThree(String gameMode) {
@@ -56,10 +44,6 @@ public class CommandlineUi implements Ui {
         }
         Moves convertedMove = translateMove(move);
         return convertedMove;
-    }
-
-    public Moves convertMove(String userMove) {
-        return moves.get(userMove);
     }
 
     public String convertWinningMove(Result winningMove) {
@@ -114,28 +98,8 @@ public class CommandlineUi implements Ui {
         output.println(english.askForLanguage());
     }
 
-    private String getTranslatedMove(String userMove) {
-        return translations.get(userMove);
-    }
-
     private boolean languageIsEnglish() {
         return language instanceof English;
-    }
-
-    private Moves getConvertedMove(String userMove) {
-        if (languageIsEnglish()) {
-            return convertMove(userMove);
-        } else {
-            String translatedMove = getTranslatedMove(userMove);
-            return convertMove(translatedMove);
-        }
-    }
-
-    private void translateToEnglish() {
-        translations = new HashMap<>();
-        translations.put("πέτρα", "rock");
-        translations.put("χαρτί", "paper");
-        translations.put("ψαλίδι", "scissors");
     }
 
     private void createMoveOptions() {
