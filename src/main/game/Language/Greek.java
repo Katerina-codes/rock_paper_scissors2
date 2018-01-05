@@ -1,9 +1,23 @@
 package main.game.Language;
 
+import main.game.Moves.Moves;
+
+import java.util.HashMap;
+
+import static main.game.Moves.Moves.*;
+
 public class Greek implements Language {
 
     public String promptForMove() {
         return "Eπιλέξτε την κίνηση σας πληκτρολογώντας 'πέτρα', 'χαρτί' ή 'ψαλίδι': ";
+    }
+
+    public Moves translateToEnglish(String move) {
+        HashMap<Object, Object> translations = new HashMap<>();
+        translations.put("πέτρα", ROCK);
+        translations.put("χαρτί", PAPER);
+        translations.put("ψαλίδι", SCISSORS);
+        return (Moves) translations.get(move);
     }
 
     public String announceWinner(String convertedWinningMove) {

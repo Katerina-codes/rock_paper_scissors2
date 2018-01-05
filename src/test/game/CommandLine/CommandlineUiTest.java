@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 
+import static main.game.Moves.Moves.ROCK;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -57,7 +58,7 @@ public class CommandlineUiTest {
     public void getsRockFromUser() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(Moves.ROCK, UI.getMoveTwo("1"));
+        assertEquals(ROCK, UI.getMoveTwo("1"));
     }
 
     @Test
@@ -94,7 +95,9 @@ public class CommandlineUiTest {
 
     @Test
     public void translateGreekMoveToEnglish() {
-        assertEquals("rock", ui.translateMove("πέτρα"));
+        CommandlineUi UI = commandLineWithInput("2");
+        UI.setLanguage();
+        assertEquals(ROCK, UI.translateMove("πέτρα"));
     }
 
     @Test
@@ -139,7 +142,7 @@ public class CommandlineUiTest {
         CommandlineUi ui = commandLineWithInput("2\nπέτρα");
         ui.setLanguage();
 
-        assertEquals(Moves.ROCK, ui.getMoveTwo("1"));
+        assertEquals(ROCK, ui.getMoveTwo("1"));
     }
 
     @Test

@@ -174,8 +174,7 @@ public class CommandlineUi implements Ui {
         results.put(Result.DRAW, "It's a draw!");
     }
 
-    public String translateMove(String move) {
-        String translated_move = translations.get(move);
-        return translated_move;
+    public Moves translateMove(String move) {
+        return language.translateToEnglish(move);
     }
 }
