@@ -66,7 +66,7 @@ public class CommandlineUi implements Ui {
         return convertedMove;
     }
 
-    public String getMoveThree(String gameMode) {
+    public Moves getMoveThree(String gameMode) {
         String move = null;
         if (gameMode.equals("1")) {
             try {
@@ -77,7 +77,8 @@ public class CommandlineUi implements Ui {
         } else {
             move = Computer.playMoveTwo();
         }
-        return move;
+        Moves convertedMove = translateMove(move);
+        return convertedMove;
     }
 
     public Moves convertMove(String userMove) {

@@ -80,8 +80,8 @@ public class CommandlineUiTest {
     @Test
     public void getMoveFromComputerAsString() {
         CommandlineUi UI = commandLineWithInput("1");
-        String[] moves = { "rock", "paper", "scissors" };
-        String move = UI.getMoveThree("2");
+        Moves[] moves = Moves.values();
+        Moves move = UI.getMoveThree("2");
 
         assertTrue(Arrays.asList(moves).contains(move));
    }
@@ -90,7 +90,7 @@ public class CommandlineUiTest {
     public void getMoveFromHumanInEnglish() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals("rock", UI.getMoveThree("1"));
+        assertEquals(ROCK, UI.getMoveThree("1"));
     }
 
     @Test
