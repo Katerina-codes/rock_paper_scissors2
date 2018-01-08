@@ -14,20 +14,20 @@ public class LanguageSetterTest {
     public void LanguageIsSetToEnglish() {
         LanguageSetter languageSetter = new LanguageSetter();
 
-        assertTrue(languageSetter.setLanguage("1") instanceof English);
+        assertTrue(LanguageSetter.setLanguage("1") instanceof English);
     }
 
     @Test
     public void LanguageIsSetToGreek() {
         LanguageSetter languageSetter = new LanguageSetter();
 
-        assertTrue(languageSetter.setLanguage("2") instanceof Greek);
+        assertTrue(LanguageSetter.setLanguage("2") instanceof Greek);
     }
 
     @Test
     public void LanguageIsSetToItalian() {
         LanguageSetter languageSetter = new LanguageSetter();
 
-        assertTrue(languageSetter.setLanguage("3") instanceof Italian);
+        assertTrue(LanguageSetter.setLanguage("3") instanceof Italian);
     }
 }
