@@ -6,7 +6,7 @@ public class Italian implements Language {
 
     @Override
     public String promptForMove() {
-        return null;
+        return "Scegli una mossa: ‘sasso’, ‘carta’ o ‘forbici’: ";
     }
 
     @Override
