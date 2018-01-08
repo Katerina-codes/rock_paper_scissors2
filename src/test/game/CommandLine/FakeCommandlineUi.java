@@ -11,7 +11,7 @@ public class FakeCommandlineUi implements Ui {
     private boolean setUserLanguageWasCalled = false;
     private boolean promptForGameModeWasCalled = false;
     private boolean getGameModeWasCalled = false;
-    private boolean getMoveThreeWasCalled = false;
+    private boolean getMoveWasCalled = false;
 
     public Moves getMove() {
         return Moves.ROCK;
@@ -45,12 +45,8 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
-    public Moves getMoveTwo(String gameMode) {
-        return Moves.ROCK;
-    }
-
     public Moves getMove(String gameMode) {
-        getMoveThreeWasCalled = true;
+        getMoveWasCalled = true;
         return Moves.ROCK;
     }
 
@@ -78,7 +74,7 @@ public class FakeCommandlineUi implements Ui {
         return askForMoveTwoWasCalled;
     }
 
-    public boolean getMoveThreeWasCalled() {
-        return getMoveThreeWasCalled;
+    public boolean getMoveWasCalled() {
+        return getMoveWasCalled;
     }
 }
