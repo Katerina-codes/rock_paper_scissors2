@@ -23,7 +23,7 @@ public class Game {
 
     private Moves getPlayerMove(String gameMode) {
         inputOutput.askForMove();
-        return inputOutput.getMoveThree(gameMode);
+        return inputOutput.getMove(gameMode);
     }
 
     private String setGameMode() {

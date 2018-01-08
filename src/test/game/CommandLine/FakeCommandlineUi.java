@@ -49,7 +49,7 @@ public class FakeCommandlineUi implements Ui {
         return Moves.ROCK;
     }
 
-    public Moves getMoveThree(String gameMode) {
+    public Moves getMove(String gameMode) {
         getMoveThreeWasCalled = true;
         return Moves.ROCK;
     }

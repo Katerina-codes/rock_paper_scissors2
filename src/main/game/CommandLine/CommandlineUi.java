@@ -31,7 +31,7 @@ public class CommandlineUi implements Ui {
         output.println(language.promptForMove());
     }
 
-    public Moves getMoveThree(String gameMode) {
+    public Moves getMove(String gameMode) {
         String move = null;
         if (gameMode.equals("1")) {
             try {
