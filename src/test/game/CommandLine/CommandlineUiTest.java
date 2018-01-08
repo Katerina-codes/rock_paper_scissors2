@@ -34,7 +34,8 @@ public class CommandlineUiTest {
         ui.askForLanguage();
 
         assertTrue(output.toString().contains("Enter '1' for English\n" +
-                "Eισάγετε '2' για Ελληνικά"));
+                "Eισάγετε '2' για Ελληνικά\n" +
+                "Scegli '3' per Italiano"));
     }
 
     @Test

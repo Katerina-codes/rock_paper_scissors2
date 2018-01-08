@@ -33,6 +33,7 @@ public class English implements Language {
 
     public String askForLanguage() {
         return "Enter '1' for English\n" +
-                "Eισάγετε '2' για Ελληνικά";
+                "Eισάγετε '2' για Ελληνικά\n" +
+                "Scegli '3' per Italiano";
     }
 }
