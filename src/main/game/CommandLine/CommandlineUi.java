@@ -98,10 +98,6 @@ public class CommandlineUi implements Ui {
         output.println(english.askForLanguage());
     }
 
-    private boolean languageIsEnglish() {
-        return language instanceof English;
-    }
-
     private void createMoveOptions() {
         moves = new HashMap<>();
         moves.put("rock", Moves.ROCK);
