@@ -3,6 +3,7 @@ package test.game.Language;
 import main.game.Language.Italian;
 import org.junit.Test;
 
+import static main.game.Moves.Moves.ROCK;
 import static org.junit.Assert.assertEquals;
 
 public class ItalianTest {
@@ -40,5 +41,12 @@ public class ItalianTest {
         Italian italian = new Italian();
 
         assertEquals("Inserisci '1' per Umani contro Umani\nInserisci '2' per Uomo contro Computer", italian.promptForGameMode());
+    }
+
+    @Test
+    public void translatesRockMoveToEnglish() {
+        Italian italian = new Italian();
+
+        assertEquals(ROCK, italian.translateToEnglish("sasso"));
     }
 }
