@@ -11,6 +11,13 @@ public class ItalianTest {
     public void promptPlayerForMove() {
         Italian italian = new Italian();
 
-        assertEquals(italian.promptForMove(), "Scegli una mossa: ‘sasso’, ‘carta’ o ‘forbici’: ");
+        assertEquals("Scegli una mossa: ‘sasso’, ‘carta’ o ‘forbici’: ", italian.promptForMove());
+    }
+
+    @Test
+    public void announceWinner() {
+        Italian italian = new Italian();
+
+        assertEquals("Il giocatore numero uno vince!", italian.announceWinner("Il giocatore numero uno"));
     }
 }
