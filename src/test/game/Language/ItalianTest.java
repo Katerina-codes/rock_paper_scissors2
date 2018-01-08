@@ -34,4 +34,11 @@ public class ItalianTest {
 
         assertEquals("E'patta!", italian.announceWinner("patta"));
     }
+
+    @Test
+    public void promptsForGameMode() {
+        Italian italian = new Italian();
+
+        assertEquals("Inserisci '1' per Umani contro Umani\nInserisci '2' per Uomo contro Computer", italian.promptForGameMode());
+    }
 }

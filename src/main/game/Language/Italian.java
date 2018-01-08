@@ -20,7 +20,8 @@ public class Italian implements Language {
 
     @Override
     public String promptForGameMode() {
-        return null;
+        return "Inserisci '1' per Umani contro Umani\n" +
+                "Inserisci '2' per Uomo contro Computer";
     }
 
     @Override
