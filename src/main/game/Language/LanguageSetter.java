@@ -4,8 +4,10 @@ public class LanguageSetter {
     public Language setLanguage(String userChoice) {
         if (userChoice.equals("1")) {
             return new English();
-        } else {
+        } else if (userChoice.equals("2")) {
             return new Greek();
+        } else {
+            return new Italian();
         }
     }
 }

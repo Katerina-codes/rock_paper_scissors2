@@ -2,6 +2,7 @@ package test.game;
 
 import main.game.Language.English;
 import main.game.Language.Greek;
+import main.game.Language.Italian;
 import main.game.Language.LanguageSetter;
 import org.junit.Test;
 
@@ -21,5 +22,12 @@ public class LanguageSetterTest {
         LanguageSetter languageSetter = new LanguageSetter();
 
         assertTrue(languageSetter.setLanguage("2") instanceof Greek);
+    }
+
+    @Test
+    public void LanguageIsSetToItalian() {
+        LanguageSetter languageSetter = new LanguageSetter();
+
+        assertTrue(languageSetter.setLanguage("3") instanceof Italian);
     }
 }
