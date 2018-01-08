@@ -84,7 +84,7 @@ public class CommandlineUiTest {
         Moves move = UI.getMoveThree("2");
 
         assertTrue(Arrays.asList(moves).contains(move));
-   }
+    }
 
     @Test
     public void getMoveFromHumanInEnglish() {
