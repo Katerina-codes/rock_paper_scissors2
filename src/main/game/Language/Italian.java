@@ -11,7 +11,7 @@ public class Italian implements Language {
 
     @Override
     public String announceWinner(String convertedWinningMove) {
-        return "Il giocatore numero uno vince!";
+        return String.format("%s vince!", convertedWinningMove);
     }
 
     @Override

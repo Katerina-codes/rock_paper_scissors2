@@ -15,9 +15,16 @@ public class ItalianTest {
     }
 
     @Test
-    public void announceWinner() {
+    public void announcePlayerOneWinner() {
         Italian italian = new Italian();
 
         assertEquals("Il giocatore numero uno vince!", italian.announceWinner("Il giocatore numero uno"));
+    }
+
+    @Test
+    public void announcePlayerTwoWinner() {
+        Italian italian = new Italian();
+
+        assertEquals("Il giocatore numero due vince!", italian.announceWinner("Il giocatore numero due"));
     }
 }
