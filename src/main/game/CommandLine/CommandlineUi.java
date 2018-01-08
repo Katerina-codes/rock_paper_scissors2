@@ -42,8 +42,7 @@ public class CommandlineUi implements Ui {
         } else {
             move = Computer.playMoveTwo();
         }
-        Moves convertedMove = translateMove(move);
-        return convertedMove;
+        return translateMove(move);
     }
 
     public String convertWinningMove(Result winningMove) {
