@@ -27,4 +27,11 @@ public class ItalianTest {
 
         assertEquals("Il giocatore numero due vince!", italian.announceWinner("Il giocatore numero due"));
     }
+
+    @Test
+    public void drawIsScoredCorrectly() {
+        Italian italian = new Italian();
+
+        assertEquals("E'patta!", italian.announceWinner("patta"));
+    }
 }

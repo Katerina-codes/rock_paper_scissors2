@@ -11,7 +11,11 @@ public class Italian implements Language {
 
     @Override
     public String announceWinner(String convertedWinningMove) {
-        return String.format("%s vince!", convertedWinningMove);
+        if (convertedWinningMove.contains("patta")) {
+            return "E'patta!";
+        } else {
+            return String.format("%s vince!", convertedWinningMove);
+        }
     }
 
     @Override
