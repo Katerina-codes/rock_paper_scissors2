@@ -3,13 +3,9 @@ package main.game;
 import main.game.Moves.Moves;
 
 public interface Ui {
-    Moves getMove();
+    void askForMove();
 
-    Moves convertMove(String playerOneMove);
-
-    void askForMoveTwo();
-
-    void announceWinnerTwo(Result playerOneWins);
+    void announceWinner(Result playerOneWins);
 
     void askForLanguage();
 
@@ -20,4 +16,6 @@ public interface Ui {
     void promptForGameMode();
 
     String getGameMode();
+
+    Moves getMoveThree(String gameMode);
 }

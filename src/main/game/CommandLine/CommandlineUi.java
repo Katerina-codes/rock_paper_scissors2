@@ -4,6 +4,7 @@ import main.game.Language.English;
 import main.game.Language.Greek;
 import main.game.Language.Language;
 import main.game.Moves.Moves;
+import main.game.Player.Computer;
 import main.game.Result;
 import main.game.Ui;
 
@@ -17,45 +18,39 @@ public class CommandlineUi implements Ui {
     private Language language;
     private HashMap<String, Moves> moves;
     private HashMap<Result, String> results;
-    private HashMap<String, String> translations;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
         createMoveOptions();
         createResultOptions();
-        translateToEnglish();
         this.language = new English();
     }
 
-    public void askForMoveTwo() {
+    public void askForMove() {
         output.println(language.promptForMove());
     }
 
-    public Moves getMove() {
-        String userMove = null;
-        try {
-            userMove = input.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (userMove.equals("rock") || userMove.equals("paper") || userMove.equals("scissors")) {
-            return convertMove(userMove);
+    public Moves getMoveThree(String gameMode) {
+        String move = null;
+        if (gameMode.equals("1")) {
+            try {
+                move = input.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else {
-            String translatedMove = translations.get(userMove);
-            return convertMove(translatedMove);
+            move = Computer.playMoveTwo();
         }
-    }
-
-    public Moves convertMove(String userMove) {
-        return moves.get(userMove);
+        Moves convertedMove = translateMove(move);
+        return convertedMove;
     }
 
     public String convertWinningMove(Result winningMove) {
         return results.get(winningMove);
     }
 
-    public void announceWinnerTwo(Result winningMove) {
+    public void announceWinner(Result winningMove) {
         String convertedWinningMove = convertWinningMove(winningMove);
         output.println(language.announceWinner(convertedWinningMove));
     }
@@ -91,7 +86,7 @@ public class CommandlineUi implements Ui {
     public String getGameMode() {
         String gameMode = null;
         try {
-            return gameMode = input.readLine();
+            return input.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -103,11 +98,8 @@ public class CommandlineUi implements Ui {
         output.println(english.askForLanguage());
     }
 
-    private void translateToEnglish() {
-        translations = new HashMap<>();
-        translations.put("πέτρα", "rock");
-        translations.put("χαρτί", "paper");
-        translations.put("ψαλίδι", "scissors");
+    private boolean languageIsEnglish() {
+        return language instanceof English;
     }
 
     private void createMoveOptions() {
@@ -122,5 +114,9 @@ public class CommandlineUi implements Ui {
         results.put(Result.PLAYER_ONE_WINS, "Player One");
         results.put(Result.PLAYER_TWO_WINS, "Player Two");
         results.put(Result.DRAW, "It's a draw!");
+    }
+
+    public Moves translateMove(String move) {
+        return language.translateToEnglish(move);
     }
 }

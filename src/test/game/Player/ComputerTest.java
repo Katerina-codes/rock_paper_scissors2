@@ -19,4 +19,14 @@ public class ComputerTest {
 
         assertTrue(Arrays.asList(moves).contains(move));
     }
+
+    @Test
+    public void computerPlaysRandomMoveAsAString() {
+        Computer computer = new Computer();
+        String[] moves = { "rock", "paper", "scissors" };
+
+        String move = computer.playMoveTwo();
+
+        assertTrue(Arrays.asList(moves).contains(move));
+    }
 }

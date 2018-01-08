@@ -1,5 +1,11 @@
 package main.game.Language;
 
+import main.game.Moves.Moves;
+
+import java.util.HashMap;
+
+import static main.game.Moves.Moves.*;
+
 public class English implements Language {
     public String promptForMove() {
         return "Pick a move. Enter 'rock', 'paper' or 'scissors': ";
@@ -15,6 +21,14 @@ public class English implements Language {
 
     public String promptForGameMode() {
         return "Enter '1' for Human vs. Human\nEnter '2' for Human vs. Computer";
+    }
+
+    public Moves translateToEnglish(String move) {
+        HashMap<Object, Object> translations = new HashMap<>();
+        translations.put("rock", ROCK);
+        translations.put("paper", PAPER);
+        translations.put("scissors", SCISSORS);
+        return (Moves) translations.get(move);
     }
 
     public String askForLanguage() {

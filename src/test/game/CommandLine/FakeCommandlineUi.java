@@ -6,15 +6,14 @@ import main.game.Ui;
 
 public class FakeCommandlineUi implements Ui {
 
-    private boolean getsMoveFromUserWasCalled = false;
     private boolean announceWinnerTwoWasCalled = false;
     private boolean askForMoveTwoWasCalled = false;
     private boolean setUserLanguageWasCalled = false;
     private boolean promptForGameModeWasCalled = false;
     private boolean getGameModeWasCalled = false;
+    private boolean getMoveThreeWasCalled = false;
 
     public Moves getMove() {
-        getsMoveFromUserWasCalled = true;
         return Moves.ROCK;
     }
 
@@ -22,7 +21,7 @@ public class FakeCommandlineUi implements Ui {
         return Moves.ROCK;
     }
 
-    public void announceWinnerTwo(Result playerOneWins) {
+    public void announceWinner(Result playerOneWins) {
         this.announceWinnerTwoWasCalled = true;
     }
 
@@ -38,7 +37,7 @@ public class FakeCommandlineUi implements Ui {
     }
 
     public void promptForGameMode() {
-      this.promptForGameModeWasCalled = true;
+        this.promptForGameModeWasCalled = true;
     }
 
     public String getGameMode() {
@@ -46,7 +45,16 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
-    public void askForMoveTwo() {
+    public Moves getMoveTwo(String gameMode) {
+        return Moves.ROCK;
+    }
+
+    public Moves getMoveThree(String gameMode) {
+        getMoveThreeWasCalled = true;
+        return Moves.ROCK;
+    }
+
+    public void askForMove() {
         this.askForMoveTwoWasCalled = true;
     }
 
@@ -62,15 +70,15 @@ public class FakeCommandlineUi implements Ui {
         return setUserLanguageWasCalled;
     }
 
-    public boolean getsMoveFromUserWasCalled() {
-        return getsMoveFromUserWasCalled;
-    }
-
     public boolean announceWinnerTwoWasCalled() {
         return announceWinnerTwoWasCalled;
     }
 
     public boolean askForMoveTwoWasCalled() {
         return askForMoveTwoWasCalled;
+    }
+
+    public boolean getMoveThreeWasCalled() {
+        return getMoveThreeWasCalled;
     }
 }
