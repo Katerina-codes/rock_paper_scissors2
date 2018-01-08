@@ -3,7 +3,7 @@ package main.game.Language;
 import main.game.Moves.Moves;
 
 public class Italian implements Language {
-    
+
     @Override
     public String promptForMove() {
         return null;

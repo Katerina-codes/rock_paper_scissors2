@@ -1,8 +1,8 @@
 package main.game.CommandLine;
 
 import main.game.Language.English;
-import main.game.Language.Greek;
 import main.game.Language.Language;
+import main.game.Language.LanguageSetter;
 import main.game.Moves.Moves;
 import main.game.Player.Computer;
 import main.game.Result;
@@ -65,18 +65,10 @@ public class CommandlineUi implements Ui {
         return userChoice;
     }
 
-    public Language createLanguageOptions(String userChoice) {
-        if (userChoice.equals("1")) {
-            return new English();
-        } else {
-            return new Greek();
-        }
-    }
-
     public void setLanguage() {
         askForLanguage();
         String userChoice = getLanguage();
-        this.language = createLanguageOptions(userChoice);
+        this.language = LanguageSetter.setLanguage(userChoice);
     }
 
     public void promptForGameMode() {

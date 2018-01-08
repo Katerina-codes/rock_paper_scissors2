@@ -1,9 +1,6 @@
 package test.game.CommandLine;
 
 import main.game.CommandLine.CommandlineUi;
-import main.game.Language.English;
-import main.game.Language.Greek;
-import main.game.Language.Language;
 import main.game.Moves.Moves;
 import main.game.Result;
 import org.junit.Before;
@@ -105,18 +102,6 @@ public class CommandlineUiTest {
         ui.announceWinner(Result.PLAYER_ONE_WINS);
 
         assertTrue(output.toString().contains("Player One"));
-    }
-
-    @Test
-    public void getEnglishLanguage() {
-        Language language = ui.createLanguageOptions("1");
-        assertTrue(language instanceof English);
-    }
-
-    @Test
-    public void getGreekLanguage() {
-        Language language = ui.createLanguageOptions("2");
-        assertTrue(language instanceof Greek);
     }
 
     @Test
