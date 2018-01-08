@@ -3,7 +3,7 @@ package test.game.Language;
 import main.game.Language.Italian;
 import org.junit.Test;
 
-import static main.game.Moves.Moves.ROCK;
+import static main.game.Moves.Moves.*;
 import static org.junit.Assert.assertEquals;
 
 public class ItalianTest {
@@ -48,5 +48,12 @@ public class ItalianTest {
         Italian italian = new Italian();
 
         assertEquals(ROCK, italian.translateToEnglish("sasso"));
+    }
+
+    @Test
+    public void translatesPaperMoveToEnglish() {
+        Italian italian = new Italian();
+
+        assertEquals(PAPER, italian.translateToEnglish("carta"));
     }
 }
