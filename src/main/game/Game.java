@@ -35,7 +35,7 @@ public class Game {
 
     private Moves getPlayerMove() {
         inputOutput.askForMove();
-        return inputOutput.getMove();
+        return inputOutput.playMove();
     }
 
     private String setGameMode() {

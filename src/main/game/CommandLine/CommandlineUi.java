@@ -29,7 +29,7 @@ public class CommandlineUi implements Ui {
         output.println(language.promptForMove());
     }
 
-    public Moves getMove() {
+    public Moves playMove() {
         String move = null;
         try {
             move = input.readLine();

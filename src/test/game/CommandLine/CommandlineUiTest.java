@@ -55,28 +55,28 @@ public class CommandlineUiTest {
     public void getsRockFromUser() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMove());
+        assertEquals(ROCK, UI.playMove());
     }
 
     @Test
     public void getsPaperFromUser() {
         CommandlineUi UI = commandLineWithInput("paper");
 
-        assertEquals(Moves.PAPER, UI.getMove());
+        assertEquals(Moves.PAPER, UI.playMove());
     }
 
     @Test
     public void ifGameModeEquals2HumanPlayerStillMakesAMove() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMove());
+        assertEquals(ROCK, UI.playMove());
     }
 
     @Test
     public void getMoveFromHumanInEnglish() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMove());
+        assertEquals(ROCK, UI.playMove());
     }
 
     @Test
@@ -116,7 +116,7 @@ public class CommandlineUiTest {
         CommandlineUi ui = commandLineWithInput("2\nπέτρα");
         ui.setLanguage();
 
-        assertEquals(ROCK, ui.getMove());
+        assertEquals(ROCK, ui.playMove());
     }
 
     @Test

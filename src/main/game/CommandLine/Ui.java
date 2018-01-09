@@ -5,7 +5,7 @@ import main.game.Result;
 public interface Ui {
     void askForMove();
 
-    Moves getMove();
+    Moves playMove();
 
     void announceWinner(Result playerOneWins);
 
