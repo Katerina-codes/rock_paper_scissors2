@@ -2,12 +2,13 @@ package main.game;
 
 import main.game.CommandLine.Ui;
 import main.game.Moves.Moves;
-import main.game.Player.Computer;
+import test.game.Player.Player;
 
 public class Game {
 
     private final Ui inputOutput;
     private Rules rules;
+    public Player player;
 
     public Game(Ui inputOutput, Rules rules) {
         this.inputOutput = inputOutput;
@@ -26,7 +27,7 @@ public class Game {
             playerTwoMove = getPlayerMove();
         } else {
             playerOneMove = getPlayerMove();
-            playerTwoMove = Computer.playMove();
+            playerTwoMove = player.playMove();
         }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);

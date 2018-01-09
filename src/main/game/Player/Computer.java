@@ -1,10 +1,11 @@
 package main.game.Player;
 
 import main.game.Moves.Moves;
+import test.game.Player.Player;
 
 import java.util.Random;
 
-public class Computer {
+public class Computer implements Player {
 
     public static String computerMove() {
         String[] moves = {"rock", "paper", "scissors"};
@@ -13,7 +14,7 @@ public class Computer {
         return moves[randomMove];
     }
 
-    public static Moves playMove() {
+    public Moves playMove() {
         String move = Computer.computerMove();
         return Moves.getMove(move);
     }
