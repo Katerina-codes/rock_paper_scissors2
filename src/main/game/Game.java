@@ -1,6 +1,7 @@
 package main.game;
 
 import main.game.Moves.Moves;
+import main.game.Player.Computer;
 
 public class Game {
 
@@ -13,17 +14,26 @@ public class Game {
     }
 
     public void runGame() {
+        Moves playerOneMove;
+        Moves playerTwoMove;
+
         inputOutput.setLanguage();
         String gameMode = setGameMode();
-        Moves playerOneMove = getPlayerMove(gameMode);
-        Moves playerTwoMove = getPlayerMove(gameMode);
+
+        if (gameMode.equals("1")) {
+            playerOneMove = getPlayerMove();
+            playerTwoMove = getPlayerMove();
+        } else {
+            playerOneMove = getPlayerMove();
+            playerTwoMove = Computer.computerMove();
+        }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
     }
 
-    private Moves getPlayerMove(String gameMode) {
+    private Moves getPlayerMove() {
         inputOutput.askForMove();
-        return inputOutput.getMove(gameMode);
+        return inputOutput.getMove();
     }
 
     private String setGameMode() {

@@ -4,7 +4,7 @@ import main.game.Moves.Moves;
 public interface Ui {
     void askForMove();
 
-    Moves getMove(String gameMode);
+    Moves getMove();
 
     void announceWinner(Result playerOneWins);
 

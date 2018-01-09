@@ -10,7 +10,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
 
 import static main.game.Moves.Moves.ROCK;
 import static org.junit.Assert.assertEquals;
@@ -56,37 +55,28 @@ public class CommandlineUiTest {
     public void getsRockFromUser() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMove("1"));
+        assertEquals(ROCK, UI.getMove());
     }
 
     @Test
     public void getsPaperFromUser() {
         CommandlineUi UI = commandLineWithInput("paper");
 
-        assertEquals(Moves.PAPER, UI.getMove("1"));
+        assertEquals(Moves.PAPER, UI.getMove());
     }
 
     @Test
     public void ifGameModeEquals2HumanPlayerStillMakesAMove() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMoveTwo());
-    }
-
-    @Test
-    public void getMoveFromComputerAsString() {
-        CommandlineUi UI = commandLineWithInput("1");
-        Moves[] moves = Moves.values();
-        Moves move = UI.getMove("2");
-
-        assertTrue(Arrays.asList(moves).contains(move));
+        assertEquals(ROCK, UI.getMove());
     }
 
     @Test
     public void getMoveFromHumanInEnglish() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMove("1"));
+        assertEquals(ROCK, UI.getMove());
     }
 
     @Test
@@ -126,7 +116,7 @@ public class CommandlineUiTest {
         CommandlineUi ui = commandLineWithInput("2\nπέτρα");
         ui.setLanguage();
 
-        assertEquals(ROCK, ui.getMove("1"));
+        assertEquals(ROCK, ui.getMove());
     }
 
     @Test

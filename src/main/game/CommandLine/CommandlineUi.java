@@ -4,7 +4,6 @@ import main.game.Language.English;
 import main.game.Language.Language;
 import main.game.Language.LanguageSetter;
 import main.game.Moves.Moves;
-import main.game.Player.Computer;
 import main.game.Result;
 import main.game.Ui;
 
@@ -31,21 +30,7 @@ public class CommandlineUi implements Ui {
         output.println(language.promptForMove());
     }
 
-    public Moves getMove(String gameMode) {
-        String move = null;
-        if (gameMode.equals("1")) {
-            try {
-                move = input.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            move = Computer.playMove();
-        }
-        return translateMove(move);
-    }
-
-    public Moves getMoveTwo() {
+    public Moves getMove() {
         String move = null;
         try {
             move = input.readLine();
