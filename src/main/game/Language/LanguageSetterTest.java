@@ -1,9 +1,5 @@
-package test.game;
+package main.game.Language;
 
-import main.game.Language.English;
-import main.game.Language.Greek;
-import main.game.Language.Italian;
-import main.game.Language.LanguageSetter;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
