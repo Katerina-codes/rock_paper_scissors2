@@ -3,6 +3,7 @@ package main.game.Language;
 import main.game.Moves.Moves;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static main.game.Moves.Moves.*;
 
@@ -30,7 +31,7 @@ public class Italian implements Language {
 
     @Override
     public Moves translateToEnglish(String move) {
-        HashMap<String, Moves> translations = new HashMap<>();
+        Map<String, Moves> translations = new HashMap<>();
         translations.put("sasso", ROCK);
         translations.put("carta", PAPER);
         translations.put("forbici", SCISSORS);

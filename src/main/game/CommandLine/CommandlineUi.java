@@ -8,14 +8,15 @@ import main.game.Result;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class CommandlineUi implements Ui {
 
     private final PrintStream output;
     private final BufferedReader input;
     private Language language;
-    private HashMap<String, Moves> moves;
-    private HashMap<Result, String> results;
+    private Map<String, Moves> moves;
+    private Map<Result, String> results;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;

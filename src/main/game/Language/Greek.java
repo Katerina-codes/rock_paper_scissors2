@@ -3,6 +3,7 @@ package main.game.Language;
 import main.game.Moves.Moves;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static main.game.Moves.Moves.*;
 
@@ -13,7 +14,7 @@ public class Greek implements Language {
     }
 
     public Moves translateToEnglish(String move) {
-        HashMap<String, Moves> translations = new HashMap<>();
+        Map<String, Moves> translations = new HashMap<>();
         translations.put("πέτρα", ROCK);
         translations.put("χαρτί", PAPER);
         translations.put("ψαλίδι", SCISSORS);
