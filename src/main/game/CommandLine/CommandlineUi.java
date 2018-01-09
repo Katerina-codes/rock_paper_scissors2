@@ -40,7 +40,17 @@ public class CommandlineUi implements Ui {
                 e.printStackTrace();
             }
         } else {
-            move = Computer.playMoveTwo();
+            move = Computer.playMove();
+        }
+        return translateMove(move);
+    }
+
+    public Moves getMoveTwo() {
+        String move = null;
+        try {
+            move = input.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return translateMove(move);
     }

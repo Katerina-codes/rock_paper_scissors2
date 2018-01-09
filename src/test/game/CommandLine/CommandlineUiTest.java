@@ -67,12 +67,10 @@ public class CommandlineUiTest {
     }
 
     @Test
-    public void getsMoveFromComputer() {
-        CommandlineUi UI = commandLineWithInput("");
-        Moves[] moves = Moves.values();
-        Moves move = UI.getMove("2");
+    public void ifGameModeEquals2HumanPlayerStillMakesAMove() {
+        CommandlineUi UI = commandLineWithInput("rock");
 
-        assertTrue(Arrays.asList(moves).contains(move));
+        assertEquals(ROCK, UI.getMoveTwo());
     }
 
     @Test
