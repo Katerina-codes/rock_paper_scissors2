@@ -15,7 +15,7 @@ public class ComputerTest {
         Computer computer = new Computer();
         String[] moves = {"rock", "paper", "scissors"};
 
-        String move = computer.playMove();
+        String move = computer.computerMove();
 
         assertTrue(Arrays.asList(moves).contains(move));
     }
@@ -25,7 +25,7 @@ public class ComputerTest {
         Computer computer = new Computer();
         Moves[] moves = Moves.values();
 
-        Moves move = computer.computerMove();
+        Moves move = computer.playMove();
 
         assertTrue(Arrays.asList(moves).contains(move));
     }

@@ -25,7 +25,7 @@ public class Game {
             playerTwoMove = getPlayerMove();
         } else {
             playerOneMove = getPlayerMove();
-            playerTwoMove = Computer.computerMove();
+            playerTwoMove = Computer.playMove();
         }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
