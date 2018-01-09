@@ -1,5 +1,7 @@
 package main.game.Player;
 
+import main.game.Moves.Moves;
+
 import java.util.Random;
 
 public class Computer {
@@ -9,5 +11,10 @@ public class Computer {
         Random random = new Random();
         int randomMove = random.nextInt(moves.length);
         return moves[randomMove];
+    }
+
+    public Moves computerMove() {
+        String move = Computer.playMove();
+        return Moves.getMove(move);
     }
 }

@@ -1,5 +1,6 @@
 package main.game.Moves;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public enum Moves {
@@ -12,5 +13,13 @@ public enum Moves {
         Random random = new Random();
         int randomMove = random.nextInt(moves.length);
         return moves[randomMove];
+    }
+
+    public static Moves getMove(String move) {
+        HashMap<Object, Object> moves = new HashMap<>();
+        moves.put("rock", Moves.ROCK);
+        moves.put("paper", Moves.PAPER);
+        moves.put("scissors", Moves.SCISSORS);
+        return (Moves) moves.get(move);
     }
 }
