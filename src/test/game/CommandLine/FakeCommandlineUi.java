@@ -2,7 +2,7 @@ package test.game.CommandLine;
 
 import main.game.Moves.Moves;
 import main.game.Result;
-import main.game.Ui;
+import main.game.CommandLine.Ui;
 
 public class FakeCommandlineUi implements Ui {
 

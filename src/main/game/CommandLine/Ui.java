@@ -1,5 +1,6 @@
-package main.game;
+package main.game.CommandLine;
 import main.game.Moves.Moves;
+import main.game.Result;
 
 public interface Ui {
     void askForMove();

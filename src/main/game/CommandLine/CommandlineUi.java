@@ -5,7 +5,6 @@ import main.game.Language.Language;
 import main.game.Language.LanguageSetter;
 import main.game.Moves.Moves;
 import main.game.Result;
-import main.game.Ui;
 
 import java.io.*;
 import java.util.HashMap;

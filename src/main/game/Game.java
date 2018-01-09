@@ -1,5 +1,6 @@
 package main.game;
 
+import main.game.CommandLine.Ui;
 import main.game.Moves.Moves;
 import main.game.Player.Computer;
 
