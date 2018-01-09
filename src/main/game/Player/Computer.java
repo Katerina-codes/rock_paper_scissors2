@@ -1,16 +1,10 @@
 package main.game.Player;
 
-import main.game.Moves.Moves;
-
 import java.util.Random;
 
 public class Computer {
 
-    public static Moves playMove() {
-        return Moves.getRandomMove();
-    }
-
-    public static String playMoveTwo() {
+    public static String playMove() {
         String[] moves = {"rock", "paper", "scissors"};
         Random random = new Random();
         int randomMove = random.nextInt(moves.length);
