@@ -30,10 +30,10 @@ public class Italian implements Language {
 
     @Override
     public Moves translateToEnglish(String move) {
-        HashMap<Object, Object> translations = new HashMap<>();
+        HashMap<String, Moves> translations = new HashMap<>();
         translations.put("sasso", ROCK);
         translations.put("carta", PAPER);
         translations.put("forbici", SCISSORS);
-        return (Moves) translations.get(move);
+        return translations.get(move);
     }
 }

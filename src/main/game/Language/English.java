@@ -24,11 +24,11 @@ public class English implements Language {
     }
 
     public Moves translateToEnglish(String move) {
-        HashMap<Object, Object> translations = new HashMap<>();
+        HashMap<String, Moves> translations = new HashMap<>();
         translations.put("rock", ROCK);
         translations.put("paper", PAPER);
         translations.put("scissors", SCISSORS);
-        return (Moves) translations.get(move);
+        return translations.get(move);
     }
 
     public String askForLanguage() {

@@ -16,7 +16,7 @@ public enum Moves {
     }
 
     public static Moves getMove(String move) {
-        HashMap<Object, Object> moves = new HashMap<>();
+        HashMap<String, Moves> moves = new HashMap<>();
         moves.put("rock", Moves.ROCK);
         moves.put("paper", Moves.PAPER);
         moves.put("scissors", Moves.SCISSORS);

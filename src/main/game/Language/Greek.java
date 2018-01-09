@@ -13,7 +13,7 @@ public class Greek implements Language {
     }
 
     public Moves translateToEnglish(String move) {
-        HashMap<Object, Object> translations = new HashMap<>();
+        HashMap<String, Moves> translations = new HashMap<>();
         translations.put("πέτρα", ROCK);
         translations.put("χαρτί", PAPER);
         translations.put("ψαλίδι", SCISSORS);
