@@ -1,23 +1,22 @@
 package main.game.CommandLine;
 
 import main.game.Language.English;
-import main.game.Language.Greek;
 import main.game.Language.Language;
+import main.game.Language.LanguageSetter;
 import main.game.Moves.Moves;
-import main.game.Player.Computer;
 import main.game.Result;
-import main.game.Ui;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class CommandlineUi implements Ui {
 
     private final PrintStream output;
     private final BufferedReader input;
     private Language language;
-    private HashMap<String, Moves> moves;
-    private HashMap<Result, String> results;
+    private Map<String, Moves> moves;
+    private Map<Result, String> results;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
@@ -31,19 +30,14 @@ public class CommandlineUi implements Ui {
         output.println(language.promptForMove());
     }
 
-    public Moves getMoveThree(String gameMode) {
+    public Moves playMove() {
         String move = null;
-        if (gameMode.equals("1")) {
-            try {
-                move = input.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            move = Computer.playMoveTwo();
+        try {
+            move = input.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        Moves convertedMove = translateMove(move);
-        return convertedMove;
+        return translateMove(move);
     }
 
     public String convertWinningMove(Result winningMove) {
@@ -65,18 +59,10 @@ public class CommandlineUi implements Ui {
         return userChoice;
     }
 
-    public Language createLanguageOptions(String userChoice) {
-        if (userChoice.equals("1")) {
-            return new English();
-        } else {
-            return new Greek();
-        }
-    }
-
     public void setLanguage() {
         askForLanguage();
         String userChoice = getLanguage();
-        this.language = createLanguageOptions(userChoice);
+        this.language = LanguageSetter.setLanguage(userChoice);
     }
 
     public void promptForGameMode() {
@@ -96,10 +82,6 @@ public class CommandlineUi implements Ui {
     public void askForLanguage() {
         English english = new English();
         output.println(english.askForLanguage());
-    }
-
-    private boolean languageIsEnglish() {
-        return language instanceof English;
     }
 
     private void createMoveOptions() {

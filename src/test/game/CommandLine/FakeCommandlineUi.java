@@ -2,7 +2,7 @@ package test.game.CommandLine;
 
 import main.game.Moves.Moves;
 import main.game.Result;
-import main.game.Ui;
+import main.game.CommandLine.Ui;
 
 public class FakeCommandlineUi implements Ui {
 
@@ -11,11 +11,7 @@ public class FakeCommandlineUi implements Ui {
     private boolean setUserLanguageWasCalled = false;
     private boolean promptForGameModeWasCalled = false;
     private boolean getGameModeWasCalled = false;
-    private boolean getMoveThreeWasCalled = false;
-
-    public Moves getMove() {
-        return Moves.ROCK;
-    }
+    private boolean playMoveWasCalled = false;
 
     public Moves convertMove(String playerOneMove) {
         return Moves.ROCK;
@@ -45,12 +41,8 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
-    public Moves getMoveTwo(String gameMode) {
-        return Moves.ROCK;
-    }
-
-    public Moves getMoveThree(String gameMode) {
-        getMoveThreeWasCalled = true;
+    public Moves playMove() {
+        playMoveWasCalled = true;
         return Moves.ROCK;
     }
 
@@ -78,7 +70,7 @@ public class FakeCommandlineUi implements Ui {
         return askForMoveTwoWasCalled;
     }
 
-    public boolean getMoveThreeWasCalled() {
-        return getMoveThreeWasCalled;
+    public boolean getMoveWasCalled() {
+        return playMoveWasCalled;
     }
 }

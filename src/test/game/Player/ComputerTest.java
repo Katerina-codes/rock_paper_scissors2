@@ -11,21 +11,21 @@ import static junit.framework.TestCase.assertTrue;
 public class ComputerTest {
 
     @Test
-    public void computerPlaysRandomMove() {
+    public void computerPlaysRandomMoveAsAString() {
         Computer computer = new Computer();
-        Moves[] moves = Moves.values();
+        String[] moves = {"rock", "paper", "scissors"};
 
-        Moves move = computer.playMove();
+        String move = computer.computerMove();
 
         assertTrue(Arrays.asList(moves).contains(move));
     }
 
     @Test
-    public void computerPlaysRandomMoveAsAString() {
+    public void getsAndConvertsMoveFromComputer() {
         Computer computer = new Computer();
-        String[] moves = { "rock", "paper", "scissors" };
+        Moves[] moves = Moves.values();
 
-        String move = computer.playMoveTwo();
+        Moves move = computer.playMove();
 
         assertTrue(Arrays.asList(moves).contains(move));
     }

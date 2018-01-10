@@ -1,11 +1,14 @@
 package main.game;
 
+import main.game.CommandLine.Ui;
 import main.game.Moves.Moves;
+import test.game.Player.Player;
 
 public class Game {
 
     private final Ui inputOutput;
     private Rules rules;
+    public Player player;
 
     public Game(Ui inputOutput, Rules rules) {
         this.inputOutput = inputOutput;
@@ -13,17 +16,26 @@ public class Game {
     }
 
     public void runGame() {
+        Moves playerOneMove;
+        Moves playerTwoMove;
+
         inputOutput.setLanguage();
         String gameMode = setGameMode();
-        Moves playerOneMove = getPlayerMove(gameMode);
-        Moves playerTwoMove = getPlayerMove(gameMode);
+
+        if (gameMode.equals("1")) {
+            playerOneMove = getPlayerMove();
+            playerTwoMove = getPlayerMove();
+        } else {
+            playerOneMove = getPlayerMove();
+            playerTwoMove = player.playMove();
+        }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
     }
 
-    private Moves getPlayerMove(String gameMode) {
+    private Moves getPlayerMove() {
         inputOutput.askForMove();
-        return inputOutput.getMoveThree(gameMode);
+        return inputOutput.playMove();
     }
 
     private String setGameMode() {

@@ -1,9 +1,11 @@
-package main.game;
-
+package main.game.CommandLine;
 import main.game.Moves.Moves;
+import main.game.Result;
 
 public interface Ui {
     void askForMove();
+
+    Moves playMove();
 
     void announceWinner(Result playerOneWins);
 
@@ -16,6 +18,4 @@ public interface Ui {
     void promptForGameMode();
 
     String getGameMode();
-
-    Moves getMoveThree(String gameMode);
 }

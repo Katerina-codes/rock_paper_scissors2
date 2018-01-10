@@ -1,9 +1,6 @@
 package test.game.CommandLine;
 
 import main.game.CommandLine.CommandlineUi;
-import main.game.Language.English;
-import main.game.Language.Greek;
-import main.game.Language.Language;
 import main.game.Moves.Moves;
 import main.game.Result;
 import org.junit.Before;
@@ -13,7 +10,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
 
 import static main.game.Moves.Moves.ROCK;
 import static org.junit.Assert.assertEquals;
@@ -37,7 +33,8 @@ public class CommandlineUiTest {
         ui.askForLanguage();
 
         assertTrue(output.toString().contains("Enter '1' for English\n" +
-                "Eισάγετε '2' για Ελληνικά"));
+                "Eισάγετε '2' για Ελληνικά\n" +
+                "Scegli '3' per Italiano"));
     }
 
     @Test
@@ -58,39 +55,28 @@ public class CommandlineUiTest {
     public void getsRockFromUser() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMoveThree("1"));
+        assertEquals(ROCK, UI.playMove());
     }
 
     @Test
     public void getsPaperFromUser() {
         CommandlineUi UI = commandLineWithInput("paper");
 
-        assertEquals(Moves.PAPER, UI.getMoveThree("1"));
+        assertEquals(Moves.PAPER, UI.playMove());
     }
 
     @Test
-    public void getsMoveFromComputer() {
-        CommandlineUi UI = commandLineWithInput("");
-        Moves[] moves = Moves.values();
-        Moves move = UI.getMoveThree("2");
+    public void ifGameModeEquals2HumanPlayerStillMakesAMove() {
+        CommandlineUi UI = commandLineWithInput("rock");
 
-        assertTrue(Arrays.asList(moves).contains(move));
+        assertEquals(ROCK, UI.playMove());
     }
-
-    @Test
-    public void getMoveFromComputerAsString() {
-        CommandlineUi UI = commandLineWithInput("1");
-        Moves[] moves = Moves.values();
-        Moves move = UI.getMoveThree("2");
-
-        assertTrue(Arrays.asList(moves).contains(move));
-   }
 
     @Test
     public void getMoveFromHumanInEnglish() {
         CommandlineUi UI = commandLineWithInput("rock");
 
-        assertEquals(ROCK, UI.getMoveThree("1"));
+        assertEquals(ROCK, UI.playMove());
     }
 
     @Test
@@ -105,18 +91,6 @@ public class CommandlineUiTest {
         ui.announceWinner(Result.PLAYER_ONE_WINS);
 
         assertTrue(output.toString().contains("Player One"));
-    }
-
-    @Test
-    public void getEnglishLanguage() {
-        Language language = ui.createLanguageOptions("1");
-        assertTrue(language instanceof English);
-    }
-
-    @Test
-    public void getGreekLanguage() {
-        Language language = ui.createLanguageOptions("2");
-        assertTrue(language instanceof Greek);
     }
 
     @Test
@@ -142,7 +116,7 @@ public class CommandlineUiTest {
         CommandlineUi ui = commandLineWithInput("2\nπέτρα");
         ui.setLanguage();
 
-        assertEquals(ROCK, ui.getMoveThree("1"));
+        assertEquals(ROCK, ui.playMove());
     }
 
     @Test
