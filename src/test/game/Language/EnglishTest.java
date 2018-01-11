@@ -23,6 +23,12 @@ public class EnglishTest {
     }
 
     @Test
+    public void announcePlayerTwoWin() {
+        English english = new English();
+
+        assertEquals("Player Two wins!", english.announcePlayerTwoWin());
+    }
+    @Test
     public void askForLanguage() {
         English english = new English();
 

@@ -45,4 +45,8 @@ public class English implements Language {
     public String announcePlayerOneWin() {
         return "Player One wins!";
     }
+
+    public String announcePlayerTwoWin() {
+        return "Player Two wins!";
+    }
 }
