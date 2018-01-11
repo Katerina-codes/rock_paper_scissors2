@@ -15,13 +15,11 @@ public class CommandlineUi implements Ui {
     private final PrintStream output;
     private final BufferedReader input;
     private Language language;
-    private Map<String, Moves> moves;
     private Map<Result, String> results;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
-        createMoveOptions();
         createResultOptions();
         this.language = new English();
     }
@@ -82,13 +80,6 @@ public class CommandlineUi implements Ui {
     public void askForLanguage() {
         English english = new English();
         output.println(english.askForLanguage());
-    }
-
-    private void createMoveOptions() {
-        moves = new HashMap<>();
-        moves.put("rock", Moves.ROCK);
-        moves.put("paper", Moves.PAPER);
-        moves.put("scissors", Moves.SCISSORS);
     }
 
     private void createResultOptions() {
