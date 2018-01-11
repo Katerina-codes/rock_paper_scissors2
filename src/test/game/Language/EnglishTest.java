@@ -33,6 +33,6 @@ public class EnglishTest {
     public void drawIsScoredCorrectly() {
         English english = new English();
 
-        assertEquals("It's a draw!", english.announceWinner("It's a draw"));
+        assertEquals("It's a draw!", english.announceDraw());
     }
 }

@@ -14,7 +14,7 @@ public class English implements Language {
 
     public String announceWinner(String convertedWinningMove) {
         if (convertedWinningMove.contains("draw")) {
-            return "It's a draw!";
+            return announceDraw();
         } else {
             return (String.format("%s wins!", convertedWinningMove));
         }
@@ -36,5 +36,9 @@ public class English implements Language {
         return "Enter '1' for English\n" +
                 "Eισάγετε '2' για Ελληνικά\n" +
                 "Scegli '3' per Italiano";
+    }
+
+    public String announceDraw() {
+        return "It's a draw!";
     }
 }
