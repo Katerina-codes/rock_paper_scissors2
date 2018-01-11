@@ -16,7 +16,7 @@ public class EnglishTest {
     }
 
     @Test
-    public void announceWinner() {
+    public void announcePlayerOneWin() {
         English english = new English();
 
         assertEquals("Player One wins!", english.announcePlayerOneWin());
@@ -30,7 +30,7 @@ public class EnglishTest {
     }
 
     @Test
-    public void drawIsScoredCorrectly() {
+    public void announceDraw() {
         English english = new English();
 
         assertEquals("It's a draw!", english.announceDraw());
