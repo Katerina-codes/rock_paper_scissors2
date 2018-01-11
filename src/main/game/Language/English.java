@@ -41,4 +41,8 @@ public class English implements Language {
     public String announceDraw() {
         return "It's a draw!";
     }
+
+    public String announcePlayerOneWin() {
+        return "Player One wins!";
+    }
 }

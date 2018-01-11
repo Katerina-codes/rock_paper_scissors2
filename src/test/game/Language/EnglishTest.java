@@ -19,7 +19,7 @@ public class EnglishTest {
     public void announceWinner() {
         English english = new English();
 
-        assertEquals("Player One wins!", english.announceWinner("Player One"));
+        assertEquals("Player One wins!", english.announcePlayerOneWin());
     }
 
     @Test
