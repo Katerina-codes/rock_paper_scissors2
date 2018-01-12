@@ -94,6 +94,13 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void announcePlayerOneWinInEnglish() {
+        ui.announceWinnerTwo(Result.PLAYER_ONE_WINS);
+
+        assertTrue(output.toString().contains("Player One wins!"));
+    }
+    
+    @Test
     public void setLanguageToEnglish() {
         CommandlineUi ui = commandLineWithInput("1");
         ui.setLanguage();

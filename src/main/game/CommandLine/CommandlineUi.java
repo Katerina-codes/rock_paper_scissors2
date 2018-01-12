@@ -92,4 +92,8 @@ public class CommandlineUi implements Ui {
     public Moves translateMove(String move) {
         return language.translateToEnglish(move);
     }
+
+    public void announceWinnerTwo(Result result) {
+        output.println(language.announcePlayerOneWin());
+    }
 }
