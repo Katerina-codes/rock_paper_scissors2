@@ -18,7 +18,7 @@ public class Greek implements Language {
         translations.put("πέτρα", ROCK);
         translations.put("χαρτί", PAPER);
         translations.put("ψαλίδι", SCISSORS);
-        return (Moves) translations.get(move);
+        return translations.get(move);
     }
 
     public String promptForGameMode() {
