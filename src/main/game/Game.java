@@ -29,7 +29,7 @@ public class Game {
             playerTwoMove = Computer.playMove();
         }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
-        inputOutput.announceWinnerTwo(winningMove);
+        inputOutput.announceWinner(winningMove);
     }
 
     private Moves getPlayerMove() {

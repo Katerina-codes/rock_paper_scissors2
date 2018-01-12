@@ -17,5 +17,5 @@ public interface Ui {
 
     String getGameMode();
 
-    void announceWinnerTwo(Result winningMove);
+    void announceWinner(Result winningMove);
 }

@@ -6,7 +6,7 @@ import main.game.CommandLine.Ui;
 
 public class FakeCommandlineUi implements Ui {
 
-    private boolean announceWinnerTwoWasCalled = false;
+    private boolean announceWinnerWasCalled = false;
     private boolean askForMoveTwoWasCalled = false;
     private boolean setUserLanguageWasCalled = false;
     private boolean promptForGameModeWasCalled = false;
@@ -37,8 +37,8 @@ public class FakeCommandlineUi implements Ui {
         return "1";
     }
 
-    public void announceWinnerTwo(Result winningMove) {
-       this.announceWinnerTwoWasCalled = true;
+    public void announceWinner(Result winningMove) {
+       this.announceWinnerWasCalled = true;
     }
 
     public Moves playMove() {
@@ -63,7 +63,7 @@ public class FakeCommandlineUi implements Ui {
     }
 
     public boolean announceWinnerTwoWasCalled() {
-        return announceWinnerTwoWasCalled;
+        return announceWinnerWasCalled;
     }
 
     public boolean askForMoveTwoWasCalled() {

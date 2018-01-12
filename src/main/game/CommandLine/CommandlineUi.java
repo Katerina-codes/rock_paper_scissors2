@@ -73,7 +73,7 @@ public class CommandlineUi implements Ui {
         return language.translateToEnglish(move);
     }
 
-    public void announceWinnerTwo(Result result) {
+    public void announceWinner(Result result) {
         if (result.equals(Result.PLAYER_ONE_WINS)) {
             output.println(language.announcePlayerOneWin());
         } else if (result.equals(Result.PLAYER_TWO_WINS)){
