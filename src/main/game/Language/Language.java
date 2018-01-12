@@ -10,4 +10,10 @@ public interface Language {
     String promptForGameMode();
 
     Moves translateToEnglish(String move);
+
+    String announceDraw();
+
+    String announcePlayerOneWin();
+
+    String announcePlayerTwoWin();
 }

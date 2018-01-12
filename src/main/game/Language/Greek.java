@@ -35,4 +35,16 @@ public class Greek implements Language {
     public String promptForGameMode() {
         return "Eisagágete '1' gia Anthrópina enantíon Anthrópou\nEisagágete '2' gia Anthrópino enantíon ypologistí";
     }
+
+    public String announceDraw() {
+        return "Είναι ισοπαλία!";
+    }
+
+    public String announcePlayerOneWin() {
+        return "Paíktis ένα κερδίζει!";
+    }
+
+    public String announcePlayerTwoWin() {
+        return "Paíktis dýo κερδίζει!";
+    }
 }

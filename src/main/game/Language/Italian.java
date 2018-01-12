@@ -37,4 +37,19 @@ public class Italian implements Language {
         translations.put("forbici", SCISSORS);
         return translations.get(move);
     }
+
+    @Override
+    public String announceDraw() {
+        return "E'patta!";
+    }
+
+    @Override
+    public String announcePlayerOneWin() {
+        return "Il giocatore numero uno vince!";
+    }
+
+    @Override
+    public String announcePlayerTwoWin() {
+        return "Il giocatore numero due vince!";
+    }
 }

@@ -115,6 +115,15 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void announcePlayerTwoWinInGreek() {
+        CommandlineUi UI = commandLineWithInput("2");
+        UI.setLanguage();
+        UI.announceWinnerTwo(Result.PLAYER_ONE_WINS);
+
+        assertTrue(output.toString().contains("Paíktis ένα κερδίζει"));
+    }
+
+    @Test
     public void setLanguageToEnglish() {
         CommandlineUi ui = commandLineWithInput("1");
         ui.setLanguage();
