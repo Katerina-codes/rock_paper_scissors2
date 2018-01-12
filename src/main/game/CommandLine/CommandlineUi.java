@@ -94,6 +94,10 @@ public class CommandlineUi implements Ui {
     }
 
     public void announceWinnerTwo(Result result) {
-        output.println(language.announcePlayerOneWin());
+        if (result.equals(Result.PLAYER_ONE_WINS)) {
+            output.println(language.announcePlayerOneWin());
+        } else {
+            output.println(language.announcePlayerTwoWin());
+        }
     }
 }
