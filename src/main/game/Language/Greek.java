@@ -13,16 +13,16 @@ public class Greek implements Language {
         return "Eπιλέξτε την κίνηση σας πληκτρολογώντας 'πέτρα', 'χαρτί' ή 'ψαλίδι': ";
     }
 
+    public String promptForGameMode() {
+        return "Eisagágete '1' gia Anthrópina enantíon Anthrópou\nEisagágete '2' gia Anthrópino enantíon ypologistí";
+    }
+
     public Moves translateToEnglish(String move) {
         Map<String, Moves> translations = new HashMap<>();
         translations.put("πέτρα", ROCK);
         translations.put("χαρτί", PAPER);
         translations.put("ψαλίδι", SCISSORS);
         return translations.get(move);
-    }
-
-    public String promptForGameMode() {
-        return "Eisagágete '1' gia Anthrópina enantíon Anthrópou\nEisagágete '2' gia Anthrópino enantíon ypologistí";
     }
 
     public String announceDraw() {
