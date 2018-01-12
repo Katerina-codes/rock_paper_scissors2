@@ -7,20 +7,16 @@ import main.game.Moves.Moves;
 import main.game.Result;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class CommandlineUi implements Ui {
 
     private final PrintStream output;
     private final BufferedReader input;
     private Language language;
-    private Map<Result, String> results;
 
     public CommandlineUi(PrintStream output, InputStream input) {
         this.output = output;
         this.input = new BufferedReader(new InputStreamReader(input));
-        createResultOptions();
         this.language = new English();
     }
 
@@ -36,15 +32,6 @@ public class CommandlineUi implements Ui {
             e.printStackTrace();
         }
         return translateMove(move);
-    }
-
-    public String convertWinningMove(Result winningMove) {
-        return results.get(winningMove);
-    }
-
-    public void announceWinner(Result winningMove) {
-        String convertedWinningMove = convertWinningMove(winningMove);
-        output.println(language.announceWinner(convertedWinningMove));
     }
 
     public String getLanguage() {
@@ -80,13 +67,6 @@ public class CommandlineUi implements Ui {
     public void askForLanguage() {
         English english = new English();
         output.println(english.askForLanguage());
-    }
-
-    private void createResultOptions() {
-        results = new HashMap<>();
-        results.put(Result.PLAYER_ONE_WINS, "Player One");
-        results.put(Result.PLAYER_TWO_WINS, "Player Two");
-        results.put(Result.DRAW, "It's a draw!");
     }
 
     public Moves translateMove(String move) {

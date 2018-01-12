@@ -87,13 +87,6 @@ public class CommandlineUiTest {
     }
 
     @Test
-    public void announcesWinner() {
-        ui.announceWinner(Result.PLAYER_ONE_WINS);
-
-        assertTrue(output.toString().contains("Player One"));
-    }
-
-    @Test
     public void announcePlayerOneWinInEnglish() {
         ui.announceWinnerTwo(Result.PLAYER_ONE_WINS);
 

@@ -12,14 +12,6 @@ public class English implements Language {
         return "Pick a move. Enter 'rock', 'paper' or 'scissors': ";
     }
 
-    public String announceWinner(String convertedWinningMove) {
-        if (convertedWinningMove.contains("draw")) {
-            return announceDraw();
-        } else {
-            return (String.format("%s wins!", convertedWinningMove));
-        }
-    }
-
     public String promptForGameMode() {
         return "Enter '1' for Human vs. Human\nEnter '2' for Human vs. Computer";
     }

@@ -7,8 +7,6 @@ public interface Ui {
 
     Moves playMove();
 
-    void announceWinner(Result playerOneWins);
-
     void askForLanguage();
 
     String getLanguage();
@@ -18,4 +16,6 @@ public interface Ui {
     void promptForGameMode();
 
     String getGameMode();
+
+    void announceWinnerTwo(Result winningMove);
 }

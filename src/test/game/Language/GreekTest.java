@@ -19,20 +19,20 @@ public class GreekTest {
     public void announcesPlayerOneWinner() {
         Greek greekLanguage = new Greek();
 
-        assertTrue(greekLanguage.announceWinner("Player One").contains("Paíktis ένα κερδίζει"));
+        assertTrue(greekLanguage.announcePlayerOneWin().contains("Paíktis ένα κερδίζει"));
     }
 
     @Test
     public void announcesPlayerTwoWinner() {
         Greek greekLanguage = new Greek();
 
-        assertTrue(greekLanguage.announceWinner("Player Two").contains("Paíktis dýo κερδίζει"));
+        assertTrue(greekLanguage.announcePlayerTwoWin().contains("Paíktis dýo κερδίζει"));
     }
 
     @Test
     public void announcesDraw() {
         Greek greekLanguage = new Greek();
 
-        assertTrue(greekLanguage.announceWinner("It's a draw!").contains("Είναι ισοπαλία!"));
+        assertTrue(greekLanguage.announceDraw().contains("Είναι ισοπαλία!"));
     }
 }

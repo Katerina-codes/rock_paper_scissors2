@@ -17,10 +17,6 @@ public class FakeCommandlineUi implements Ui {
         return Moves.ROCK;
     }
 
-    public void announceWinner(Result playerOneWins) {
-        this.announceWinnerTwoWasCalled = true;
-    }
-
     public void askForLanguage() {
     }
 
@@ -39,6 +35,10 @@ public class FakeCommandlineUi implements Ui {
     public String getGameMode() {
         this.getGameModeWasCalled = true;
         return "1";
+    }
+
+    public void announceWinnerTwo(Result winningMove) {
+       this.announceWinnerTwoWasCalled = true;
     }
 
     public Moves playMove() {
