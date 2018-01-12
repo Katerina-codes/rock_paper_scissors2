@@ -108,6 +108,13 @@ public class CommandlineUiTest {
     }
 
     @Test
+    public void announceDrawInEnglish() {
+        ui.announceWinnerTwo(Result.DRAW);
+
+        assertTrue(output.toString().contains("It's a draw!"));
+    }
+
+    @Test
     public void setLanguageToEnglish() {
         CommandlineUi ui = commandLineWithInput("1");
         ui.setLanguage();
