@@ -24,11 +24,11 @@ public class Game {
         Computer computer = new Computer();
         Human human = new Human(inputOutput);
 
+        playerOneMove = human.playMove();
+
         if (gameMode.equals("1")) {
-            playerOneMove = human.playMove();
             playerTwoMove = human.playMove();
         } else {
-            playerOneMove = human.playMove();
             playerTwoMove = computer.playMove();
         }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
