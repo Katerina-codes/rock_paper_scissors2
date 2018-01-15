@@ -20,13 +20,14 @@ public class Game {
 
         inputOutput.setLanguage();
         String gameMode = setGameMode();
+        Computer computer = new Computer();
 
         if (gameMode.equals("1")) {
             playerOneMove = getPlayerMove();
             playerTwoMove = getPlayerMove();
         } else {
             playerOneMove = getPlayerMove();
-            playerTwoMove = Computer.playMove();
+            playerTwoMove = computer.playMove();
         }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);

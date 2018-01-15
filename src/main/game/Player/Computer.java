@@ -13,7 +13,7 @@ public class Computer {
         return moves[randomMove];
     }
 
-    public static Moves playMove() {
+    public Moves playMove() {
         String move = Computer.computerMove();
         return Moves.getMove(move);
     }
