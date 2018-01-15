@@ -13,6 +13,7 @@ public class Human implements Player {
     }
 
     public Moves playMove() {
+        inputOutput.askForMove();
         return inputOutput.playMove();
     }
 }

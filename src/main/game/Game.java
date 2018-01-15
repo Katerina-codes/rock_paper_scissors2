@@ -3,6 +3,7 @@ package main.game;
 import main.game.CommandLine.Ui;
 import main.game.Moves.Moves;
 import main.game.Player.Computer;
+import main.game.Player.Human;
 
 public class Game {
 
@@ -21,21 +22,17 @@ public class Game {
         inputOutput.setLanguage();
         String gameMode = setGameMode();
         Computer computer = new Computer();
+        Human human = new Human(inputOutput);
 
         if (gameMode.equals("1")) {
-            playerOneMove = getPlayerMove();
-            playerTwoMove = getPlayerMove();
+            playerOneMove = human.playMove();
+            playerTwoMove = human.playMove();
         } else {
-            playerOneMove = getPlayerMove();
+            playerOneMove = human.playMove();
             playerTwoMove = computer.playMove();
         }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
-    }
-
-    private Moves getPlayerMove() {
-        inputOutput.askForMove();
-        return inputOutput.playMove();
     }
 
     private String setGameMode() {
