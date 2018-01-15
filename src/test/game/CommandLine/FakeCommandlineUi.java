@@ -13,10 +13,6 @@ public class FakeCommandlineUi implements Ui {
     private boolean getGameModeWasCalled = false;
     private boolean playMoveWasCalled = false;
 
-    public Moves convertMove(String playerOneMove) {
-        return Moves.ROCK;
-    }
-
     public void askForLanguage() {
     }
 
