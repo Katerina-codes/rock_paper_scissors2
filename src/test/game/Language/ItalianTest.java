@@ -3,7 +3,8 @@ package test.game.Language;
 import main.game.Language.Italian;
 import org.junit.Test;
 
-import static main.game.Moves.Moves.*;
+import static main.game.Moves.Moves.PAPER;
+import static main.game.Moves.Moves.ROCK;
 import static org.junit.Assert.assertEquals;
 
 public class ItalianTest {
@@ -19,21 +20,21 @@ public class ItalianTest {
     public void announcePlayerOneWinner() {
         Italian italian = new Italian();
 
-        assertEquals("Il giocatore numero uno vince!", italian.announceWinner("Il giocatore numero uno"));
+        assertEquals("Il giocatore numero uno vince!", italian.announcePlayerOneWin());
     }
 
     @Test
     public void announcePlayerTwoWinner() {
         Italian italian = new Italian();
 
-        assertEquals("Il giocatore numero due vince!", italian.announceWinner("Il giocatore numero due"));
+        assertEquals("Il giocatore numero due vince!", italian.announcePlayerTwoWin());
     }
 
     @Test
     public void drawIsScoredCorrectly() {
         Italian italian = new Italian();
 
-        assertEquals("E'patta!", italian.announceWinner("patta"));
+        assertEquals("E'patta!", italian.announceDraw());
     }
 
     @Test

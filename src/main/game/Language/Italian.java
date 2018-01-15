@@ -15,15 +15,6 @@ public class Italian implements Language {
     }
 
     @Override
-    public String announceWinner(String convertedWinningMove) {
-        if (convertedWinningMove.contains("patta")) {
-            return "E'patta!";
-        } else {
-            return String.format("%s vince!", convertedWinningMove);
-        }
-    }
-
-    @Override
     public String promptForGameMode() {
         return "Inserisci '1' per Umani contro Umani\n" +
                 "Inserisci '2' per Uomo contro Computer";
@@ -36,5 +27,20 @@ public class Italian implements Language {
         translations.put("carta", PAPER);
         translations.put("forbici", SCISSORS);
         return translations.get(move);
+    }
+
+    @Override
+    public String announceDraw() {
+        return "E'patta!";
+    }
+
+    @Override
+    public String announcePlayerOneWin() {
+        return "Il giocatore numero uno vince!";
+    }
+
+    @Override
+    public String announcePlayerTwoWin() {
+        return "Il giocatore numero due vince!";
     }
 }

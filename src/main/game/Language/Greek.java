@@ -13,26 +13,27 @@ public class Greek implements Language {
         return "Eπιλέξτε την κίνηση σας πληκτρολογώντας 'πέτρα', 'χαρτί' ή 'ψαλίδι': ";
     }
 
+    public String promptForGameMode() {
+        return "Eisagágete '1' gia Anthrópina enantíon Anthrópou\nEisagágete '2' gia Anthrópino enantíon ypologistí";
+    }
+
     public Moves translateToEnglish(String move) {
         Map<String, Moves> translations = new HashMap<>();
         translations.put("πέτρα", ROCK);
         translations.put("χαρτί", PAPER);
         translations.put("ψαλίδι", SCISSORS);
-        return (Moves) translations.get(move);
+        return translations.get(move);
     }
 
-    public String announceWinner(String convertedWinningMove) {
-        if (convertedWinningMove.contains("One")) {
-            convertedWinningMove = "Paíktis ένα";
-        } else if (convertedWinningMove.contains("draw")) {
-            return "Είναι ισοπαλία!";
-        } else {
-            convertedWinningMove = "Paíktis dýo";
-        }
-        return (String.format("%s κερδίζει!", convertedWinningMove));
+    public String announceDraw() {
+        return "Είναι ισοπαλία!";
     }
 
-    public String promptForGameMode() {
-        return "Eisagágete '1' gia Anthrópina enantíon Anthrópou\nEisagágete '2' gia Anthrópino enantíon ypologistí";
+    public String announcePlayerOneWin() {
+        return "Paíktis ένα κερδίζει!";
+    }
+
+    public String announcePlayerTwoWin() {
+        return "Paíktis dýo κερδίζει!";
     }
 }

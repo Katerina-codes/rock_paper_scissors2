@@ -87,10 +87,33 @@ public class CommandlineUiTest {
     }
 
     @Test
-    public void announcesWinner() {
+    public void announcePlayerOneWinInEnglish() {
         ui.announceWinner(Result.PLAYER_ONE_WINS);
 
-        assertTrue(output.toString().contains("Player One"));
+        assertTrue(output.toString().contains("Player One wins!"));
+    }
+
+    @Test
+    public void announcePlayerTwoWinInEnglish() {
+        ui.announceWinner(Result.PLAYER_TWO_WINS);
+
+        assertTrue(output.toString().contains("Player Two wins!"));
+    }
+
+    @Test
+    public void announceDrawInEnglish() {
+        ui.announceWinner(Result.DRAW);
+
+        assertTrue(output.toString().contains("It's a draw!"));
+    }
+
+    @Test
+    public void announcePlayerTwoWinInGreek() {
+        CommandlineUi UI = commandLineWithInput("2");
+        UI.setLanguage();
+        UI.announceWinner(Result.PLAYER_ONE_WINS);
+
+        assertTrue(output.toString().contains("Paíktis ένα κερδίζει"));
     }
 
     @Test

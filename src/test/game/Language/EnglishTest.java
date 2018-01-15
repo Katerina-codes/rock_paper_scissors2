@@ -16,12 +16,18 @@ public class EnglishTest {
     }
 
     @Test
-    public void announceWinner() {
+    public void announcePlayerOneWin() {
         English english = new English();
 
-        assertEquals("Player One wins!", english.announceWinner("Player One"));
+        assertEquals("Player One wins!", english.announcePlayerOneWin());
     }
 
+    @Test
+    public void announcePlayerTwoWin() {
+        English english = new English();
+
+        assertEquals("Player Two wins!", english.announcePlayerTwoWin());
+    }
     @Test
     public void askForLanguage() {
         English english = new English();
@@ -30,9 +36,9 @@ public class EnglishTest {
     }
 
     @Test
-    public void drawIsScoredCorrectly() {
+    public void announceDraw() {
         English english = new English();
 
-        assertEquals("It's a draw!", english.announceWinner("It's a draw"));
+        assertEquals("It's a draw!", english.announceDraw());
     }
 }
