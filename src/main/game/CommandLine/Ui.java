@@ -1,4 +1,5 @@
 package main.game.CommandLine;
+
 import main.game.Moves.Moves;
 import main.game.Result;
 

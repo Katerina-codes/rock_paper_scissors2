@@ -8,7 +8,7 @@ public class Human implements Player {
     private Ui inputOutput;
 
     public Human(Ui inputOutput) {
-       this.inputOutput = inputOutput;
+        this.inputOutput = inputOutput;
     }
 
     public Moves playMove() {
