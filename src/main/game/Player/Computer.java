@@ -4,7 +4,7 @@ import main.game.Moves.Moves;
 
 import java.util.Random;
 
-public class Computer {
+public class Computer implements Player {
 
     public static String computerMove() {
         String[] moves = {"rock", "paper", "scissors"};
