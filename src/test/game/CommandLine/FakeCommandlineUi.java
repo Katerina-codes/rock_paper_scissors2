@@ -34,7 +34,7 @@ public class FakeCommandlineUi implements Ui {
     }
 
     public void announceWinner(Result winningMove) {
-       this.announceWinnerWasCalled = true;
+        this.announceWinnerWasCalled = true;
     }
 
     public Moves playMove() {
