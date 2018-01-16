@@ -1,9 +1,11 @@
 package main.game;
 
 import main.game.CommandLine.Ui;
+import main.game.Language.GameFactory;
 import main.game.Moves.Moves;
-import main.game.Player.Computer;
-import main.game.Player.Human;
+import main.game.Player.Player;
+
+import java.util.List;
 
 public class Game {
 
@@ -16,21 +18,14 @@ public class Game {
     }
 
     public void runGame() {
-        Moves playerOneMove;
-        Moves playerTwoMove;
-
         inputOutput.setLanguage();
         String gameMode = setGameMode();
-        Computer computer = new Computer();
-        Human human = new Human(inputOutput);
+        GameFactory gameType = new GameFactory(inputOutput);
 
-        playerOneMove = human.playMove();
+        List<Player> playerTypes = gameType.getPlayerTypes(gameMode);
+        Moves playerOneMove = playerTypes.get(0).playMove();
+        Moves playerTwoMove = playerTypes.get(1).playMove();
 
-        if (gameMode.equals("1")) {
-            playerTwoMove = human.playMove();
-        } else {
-            playerTwoMove = computer.playMove();
-        }
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
     }
