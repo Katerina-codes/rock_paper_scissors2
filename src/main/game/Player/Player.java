@@ -1,4 +1,4 @@
-package test.game.Player;
+package main.game.Player;
 
 import main.game.Moves.Moves;
 

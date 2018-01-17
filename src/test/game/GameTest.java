@@ -42,7 +42,7 @@ public class GameTest {
         assertTrue(inputOutput.promptForGameModeWasCalled());
         assertTrue(inputOutput.getGameModeWasCalled());
         assertTrue(inputOutput.setUserLanguageWasCalled());
-        assertTrue(inputOutput.askForMoveTwoWasCalled());
+        assertTrue(inputOutput.askForMoveWasCalled());
         assertTrue(inputOutput.getMoveWasCalled());
         assertTrue(inputOutput.announceWinnerTwoWasCalled());
     }

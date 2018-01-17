@@ -1,8 +1,11 @@
 package main.game;
 
 import main.game.CommandLine.Ui;
+import main.game.Language.GameFactory;
 import main.game.Moves.Moves;
-import main.game.Player.Computer;
+import main.game.Player.Player;
+
+import java.util.List;
 
 public class Game {
 
@@ -15,26 +18,16 @@ public class Game {
     }
 
     public void runGame() {
-        Moves playerOneMove;
-        Moves playerTwoMove;
-
         inputOutput.setLanguage();
         String gameMode = setGameMode();
+        GameFactory gameType = new GameFactory(inputOutput);
 
-        if (gameMode.equals("1")) {
-            playerOneMove = getPlayerMove();
-            playerTwoMove = getPlayerMove();
-        } else {
-            playerOneMove = getPlayerMove();
-            playerTwoMove = Computer.playMove();
-        }
+        List<Player> playerTypes = gameType.getPlayerTypes(gameMode);
+        Moves playerOneMove = playerTypes.get(0).playMove();
+        Moves playerTwoMove = playerTypes.get(1).playMove();
+
         Result winningMove = rules.findWinningPLayer(playerOneMove, playerTwoMove);
         inputOutput.announceWinner(winningMove);
-    }
-
-    private Moves getPlayerMove() {
-        inputOutput.askForMove();
-        return inputOutput.playMove();
     }
 
     private String setGameMode() {
