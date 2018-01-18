@@ -1,9 +1,6 @@
-package main.game.Language;
+package main.game.Player;
 
 import main.game.CommandLine.Ui;
-import main.game.Player.Computer;
-import main.game.Player.Human;
-import main.game.Player.Player;
 
 import java.util.Arrays;
 import java.util.HashMap;

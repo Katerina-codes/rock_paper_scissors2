@@ -1,7 +1,7 @@
 package main.game;
 
 import main.game.CommandLine.Ui;
-import main.game.Language.GameFactory;
+import main.game.Player.GameFactory;
 import main.game.Moves.Moves;
 import main.game.Player.Player;
 

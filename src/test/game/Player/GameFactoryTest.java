@@ -1,7 +1,7 @@
 package test.game.Player;
 
 import main.game.CommandLine.Ui;
-import main.game.Language.GameFactory;
+import main.game.Player.GameFactory;
 import main.game.Player.Computer;
 import main.game.Player.Human;
 import main.game.Player.Player;
